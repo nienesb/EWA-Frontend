@@ -1,0 +1,259 @@
+:host {
+  display: block;
+  padding-left: 48px;
+  padding-right: 16px;
+}
+
+.input-group span {
+  width: 150px;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  background-color: transparent;
+  border: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0 0 0 8px;
+}
+
+.form .form-group input[type=text] {
+  width: 100%;
+}
+
+.button-container {
+  bottom: 0.75rem;
+  text-align: center;
+}
+
+.button-container button {
+  display: inline-block;
+  max-width: 11rem;
+  font-size: 14px;
+}
+
+.loading-icon {
+  position: relative;
+}
+
+.results-table tbody tr {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.resultsContainer {
+  background-color: #FFF;
+}
+
+.resultsContainer .resultsHeader {
+  background-color: #718294;
+  height: 70px;
+}
+
+.resultsContainer .resultsHeader h4 {
+  color: #fefffd;
+  line-height: 70px;
+  margin-bottom: 0;
+}
+
+.resultsContainer .resultsBody {
+  max-height: 480px;
+  overflow: auto;
+  width: 100%;
+}
+
+.resultsContainer .resultsBody .noResults {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.resultsContainer .resultsBody .noResults h1 {
+  color: #718294;
+}
+
+.resultsContainer .resultsBody th,
+.resultsContainer .resultsBody td {
+  text-align: center;
+}
+
+.resultsContainer .resultsBody th {
+  border-top: 0;
+}
+
+.alignRight {
+  float: right;
+}
+
+.sorteerContainer {
+  width: 16rem;
+}
+
+.sorteerContainer label {
+  color: #FFF;
+  line-height: 4.4rem;
+  margin-bottom: 0;
+}
+
+.sorteerContainer select {
+  height: 4.4rem;
+  float: right;
+  width: 65%;
+  background-color: #647684;
+  border: 0;
+  color: #FFF;
+  outline: none;
+  padding: 5px;
+}
+
+.tripfinderContainer {
+  color: #8e8e93;
+  background-color: #fff;
+  border: 0;
+  border-radius: 7px;
+  margin-bottom: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  display: block;
+}
+
+.tripfinderContainer .tripfinderHeader {
+  background-color: #f0f4f7;
+  height: 3.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  float: left;
+  width: 100%;
+}
+
+.refreshbutton {
+  float: right;
+  padding: 0;
+  margin: 11px;
+  outline: none;
+}
+
+.tripfinderContainer .tripfinderHeader ul {
+  width: 100%;
+  display: block;
+  height: 3.5rem;
+  margin: 0;
+}
+
+.tripfinderHeader ul li {
+  float: left;
+  margin-left: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 1.1rem;
+  margin-top: 0;
+}
+
+.tripfinderList li:hover,
+.tripfinderList .active {
+  border-bottom: 4px solid #199ede;
+  padding-bottom: 1.1rem;
+  color: #000;
+  font-weight: bold;
+}
+
+.tripfinderContainer .tripfinderBody {
+  background-color: #FFF;
+  height: 100%;
+  padding: 15px 22px;
+  float: left;
+  width: 100%;
+}
+
+.roundedTwo {
+  float: left;
+  border-radius: 0;
+  width: 21px;
+  height: 21px;
+}
+
+td .roundedTwo {
+  vertical-align: middle;
+  display: inline-block;
+  float: none;
+}
+
+.roundedTwo label {
+  border-radius: 0;
+  width: 21px;
+  height: 21px;
+  line-height: 21px;
+}
+
+.roundedTwo label:after,
+.roundedTwo input[type=checkbox]:checked+label:after {
+  border-radius: 0;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+}
+
+.outer {
+  float: left;
+  line-height: 30px;
+  margin-left: 10px;
+  color: #8e8e93;
+  cursor: pointer;
+}
+
+.finderCheckboxContainer {
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+}
+
+.tripfinderList li:last-child:hover {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.loading-overlay {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-x: hidden;
+  z-index: 99999;
+}
+
+.loading-overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.loading-overlay i {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 12rem !important;
+  display: block;
+}
+
+.ion-android-refresh {
+  font-size: 24px;
+}
+
+:host .ion-ios-close-outline {
+  font-size: 40px;
+  cursor: pointer;
+  margin-left: 10px;
+  position: absolute;
+  top: -10px;
+}
+
+.tripTable tbody tr {
+  cursor: pointer;
+}

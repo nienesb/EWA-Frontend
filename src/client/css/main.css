@@ -1,0 +1,818 @@
+/* Reset */
+
+html,
+body,
+div {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Box-sizing border-box */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #efeff4;
+}
+
+
+/* Set up a default font and some padding to provide breathing room */
+
+body {
+  background-color: #efeff4;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(255, 255, 255, 0.01) 0 0 1px;
+  background-size: cover;
+  background-attachment: fixed;
+  -moz-osx-font-smoothing: grayscale;
+  max-height: 100%;
+  min-height: 100%;
+}
+
+html body a:hover {
+  color: #285eb8;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+ul {
+  color: #8e8e93;
+  margin: 10px 0 0 0;
+  padding: 0 0 0 20px;
+}
+
+li {
+  color: #8e8e93;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+input[type=text],
+input[type=number] {
+  font-size: 14px;
+  height: 40px;
+  outline: none;
+  padding: 8px;
+}
+
+label {
+  display: inline-block;
+}
+
+button {
+  background-color: #106cc8;
+}
+
+button:hover {
+  background-color: #28739e;
+}
+
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body label {
+  color: #007aff;
+  font-weight: 300;
+}
+
+html body h4 {
+  font-size: 16px;
+}
+
+html body p {
+  color: #8e8e93;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'iformsicons';
+  src: url('/fonts/iformsicons.eot');
+  src: url('/fonts/iformsicons.eot?#iefix') format('embedded-opentype'), url('/fonts/iformsicons.ttf') format('truetype'), url('/fonts/iformsicons.woff') format('woff'), url('/fonts/iformsicons.svg#iformsicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.settingsTitle {
+  color: #545454;
+  font-weight: bold;
+}
+
+.top5 {
+  margin-top: 5px;
+}
+
+.top7 {
+  margin-top: 7px;
+}
+
+.top10 {
+  margin-top: 10px;
+}
+
+.top15 {
+  margin-top: 15px;
+}
+
+.top17 {
+  margin-top: 17px;
+}
+
+.top20 {
+  margin-top: 20px;
+}
+
+.top30 {
+  margin-top: 30px;
+}
+
+sd-home,
+sd-trip,
+sd-users,
+sd-ambulanceservice,
+sd-countries,
+sd-exportsettings,
+sd-hospitalorganizations,
+sd-hospitals,
+sd-insurancecompanies,
+sd-medicine,
+sd-pricestructures,
+sd-specialdebtors,
+sd-register,
+sd-about {
+  margin-left: 11.5rem;
+  margin-top: 2.25rem;
+}
+
+sd-home>div.col-xs-12,
+sd-trip>div.col-xs-12,
+sd-users>div.col-xs-12,
+sd-ambulanceservice>div.col-xs-12,
+sd-countries>div.col-xs-12,
+sd-exportsettings>div.col-xs-12,
+sd-hospitalorganizations>div.col-xs-12,
+sd-hospitals>div.col-xs-12,
+sd-insurancecompanies>div.col-xs-12,
+sd-medicine>div.col-xs-12,
+sd-pricestructures>div.col-xs-12,
+sd-specialdebtors>div.col-xs-12,
+sd-register>div.col-xs-12,
+sd-about>div.col-xs-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.menu-collapsed sd-home,
+.menu-collapsed sd-trip,
+.menu-collapsed sd-users,
+.menu-collapsed sd-ambulanceservice,
+.menu-collapsed sd-countries,
+.menu-collapsed sd-exportsettings,
+.menu-collapsed sd-hospitalorganizations,
+.menu-collapsed sd-hospitals,
+.menu-collapsed sd-insurancecompanies,
+.menu-collapsed sd-medicine,
+.menu-collapsed sd-pricestructures,
+.menu-collapsed sd-specialdebtors,
+.menu-collapsed sd-register,
+.menu-collapsed sd-about {
+  margin-left: 3.375rem;
+}
+
+.menu-collapsed nav.sidebar {
+  width: 3.25rem;
+}
+
+.menu-collapsed nav.sidebar span {
+  display: none !important;
+}
+
+nav.sidebar a div {
+  margin-right: 18px;
+}
+
+.menu-collapsed nav.sidebar a div {
+  margin-right: 0;
+}
+
+.menu-collapsed nav.sidebar .sidebar-submenu-icon {
+  display: none !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
+  cursor: default;
+}
+
+.card {
+  color: #8e8e93;
+  background-color: #fff;
+  border: 0;
+  border-radius: 7px;
+  margin-bottom: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.card>.card-body {
+  height: 100%;
+  padding: 15px 22px;
+}
+
+.card-header {
+  background-color: initial;
+  padding: .5rem 0;
+  text-align: center;
+}
+
+.card-header h3 {
+  margin-bottom: 0;
+}
+
+.card-table .card-body {
+  border-bottom: 1px solid #e5e5e5;
+  line-height: 40px;
+  text-align: left;
+}
+
+.card-table input,
+.card-table select {
+  max-width: 15rem;
+}
+
+.card-table .card-body span {
+  color: #8e8e93;
+}
+
+.card-table .card-body span.errorMessage {
+  color: #ff3b30;
+}
+
+.card-table .card-body .btn-container {
+  margin-top: 1rem;
+}
+
+.tripCard {
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border: 1px solid #c4c4c4;
+  float: left;
+  width: 100%;
+}
+
+.tripCard .card-header {
+  width: 100%;
+  background-color: #FFF;
+  border-bottom: 1px solid #c4c4c4;
+  padding: 0 10px;
+}
+
+.tripCard .card-header i {
+  font-size: 21px;
+  color: #000;
+  font-weight: 300;
+}
+
+.tripCard .card-header .tripCardIcon {
+  margin-right: 10px;
+  font-size: 31px;
+  color: #0275d8;
+}
+
+.tripCard .card-body {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #f7f7f7;
+  float: left;
+  width: 100%;
+}
+
+select#priority {
+  max-width: 4rem;
+}
+
+.form-group label {
+  margin-top: 0.5rem;
+  margin-bottom: 5px;
+  color: #8e8e93;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.edit-btn {
+  float: right;
+  max-width: 3rem;
+  text-align: center;
+}
+
+.save-btn {
+  float: right;
+  max-width: 15rem;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.not-allowed {
+  border: 1px solid #d2d2d2;
+  width: 100%;
+  height: 40px;
+  display: block;
+  line-height: 40px;
+  background: #eceeef;
+  text-align: left;
+  padding-left: 7px;
+  cursor: not-allowed;
+}
+
+.checkbox,
+.radio {
+  position: relative;
+  display: block;
+  margin-bottom: 0;
+}
+
+.table {
+  color: #8e8e93;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.results-table {
+  font-size: 16px;
+}
+
+.loading-icon {
+  text-align: center;
+}
+
+.ion-load-d {
+  color: #8e8e93 !important;
+  font-size: 40px !important;
+}
+
+.ion-load-d:before {
+  animation: spin 1s infinite linear;
+}
+
+.loading-icon-centered {
+  text-align: center;
+}
+
+.errorMessage {
+  color: #f95372;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.ng-valid[required] {
+  border-left: 5px solid #42a948;
+  /* green */
+}
+
+.ng-invalid {
+  border-left: 5px solid #a94442;
+  /* red */
+}
+
+.datePickerContainer {
+  display: block;
+  z-index: 999;
+  position: relative;
+}
+
+.bg-faded,
+datepicker button:hover {
+  background-color: #f7f7f9;
+}
+
+.p-a {
+  padding: 1rem!important;
+}
+
+.btn-secondary {
+  color: #373a3c;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+datepicker button {
+  background-color: #FFF;
+}
+
+.ui-calendar {
+  display: block;
+  width: 100%;
+}
+
+.ui-calendar .ui-inputtext {
+  width: calc(100% - 37px);
+  box-shadow: inset 0 0 0;
+  border-radius: 0;
+}
+
+#ui-datepicker-div {
+  z-index: 999 !important;
+}
+
+.ui-multiselect {
+  display: table;
+  width: 100%;
+}
+
+.ui-multiselect .ui-multiselect-label-container {
+  max-width: 445px;
+}
+
+.ui-corner-all {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-border-top-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.fa {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ui-multiselect .ui-multiselect-trigger .fa {
+  right: -2px;
+}
+
+.btn-round {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.btn-round.btn-lg {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-round.btn-sm {
+  width: 34px;
+  height: 34px;
+}
+
+.btn-round.btn-xs {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-tabs .btn {
+  background-color: #FFF;
+  color: #33addf;
+  min-width: 100px;
+  padding: .4rem;
+  border-color: #33addf;
+}
+
+.nav-tabs .btn {
+  border-radius: 0;
+  border-right: 0;
+}
+
+.nav-tabs .btn:first-child {
+  border-top-left-radius: .4rem;
+  border-bottom-left-radius: .4rem;
+}
+
+.nav-tabs .btn:last-child {
+  border-top-right-radius: .4rem;
+  border-bottom-right-radius: .4rem;
+  border-right: 1px solid #33addf;
+}
+
+.nav-tabs .btn.active {
+  background-color: #33addf;
+  color: #FFF;
+}
+
+.roundedTwo {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: 2px auto;
+  border-radius: 50px;
+}
+
+.roundedTwo label {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 1px solid #bebebe;
+}
+
+.roundedTwo label:after {
+  content: '\2713';
+  width: 29px;
+  height: 29px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 999;
+  background: #33addf;
+  border-radius: 50px;
+  color: #FFF;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.roundedTwo label:hover::after {
+  opacity: 0.3;
+  border: 1px solid #33addf;
+}
+
+.roundedTwo input[type=checkbox] {
+  visibility: hidden;
+}
+
+.roundedTwo input[type=checkbox]:checked+label:after {
+  opacity: 1;
+  border: 1px solid #33addf
+}
+
+.nav-tabs {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.pane {
+  padding: 1em;
+}
+
+.tripfinderContainer .pane {
+  padding: 0;
+}
+
+.tripfinderContainer .nav-tabs {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+  height: 3.5rem;
+}
+
+.tripfinderContainer .nav-tabs .btn.active {
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 3px solid #199ede;
+  padding-bottom: 0;
+}
+
+.tripfinderContainer .nav-tabs .btn {
+  padding: 0;
+  float: left;
+  border-radius: 0;
+  border-right: 0;
+  font-size: 14px;
+  min-width: auto;
+  font-weight: 500;
+  color: #373a3c;
+  margin-left: 15px;
+  margin-right: 15px;
+  line-height: 3.5rem;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.tripfinderContainer .nav-tabs .btn:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.tripfinderContainer .nav-tabs .btn:last-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+
+
+/* Loading spinner */
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    /* Firefox 16+*/
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    /* Firefox 16+*/
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #efeff4;
+  backface-visibility: hidden;
+}
+
+#preloader>div {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00abff;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  animation: spin 2s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#preloader>div:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00abff;
+  -webkit-animation: spin 3s linear infinite;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 3s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#preloader>div:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00abff;
+  animation: spin 1.5s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+.forms-icon {
+  font-family: 'iformsicons';
+  color: #FFF;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.forms-icon:before {
+  font-size: 0.850rem;
+}
+
+.icon-trip:before {
+  content: "\33";
+}
+
+.icon-patient:before {
+  content: "\3d";
+}
+
+.icon-situation:before {
+  content: "\31";
+}
+
+.icon-primary:before {
+  content: "\2a";
+}
+
+.icon-secondary:before {
+  content: "\29";
+}
+
+.icon-measurement:before {
+  content: "\37";
+}
+
+.icon-medication:before {
+  content: "\24";
+}
+
+.icon-workdiagnose:before {
+  content: "\2e";
+}
+
+.icon-finished:before {
+  content: "\39";
+}
+
+.icon-announcement:before {
+  content: "\26";
+}
+
+.icon-pin:before {
+  content: "\25";
+}
+
+.icon-edit:before {
+  content: "\30";
+}
+
+.icon-treatment:before {
+  content: "\4c";
+}
+
+.icon-pen:before {
+  content: "\42";
+}
+
+.icon-status:before {
+  content: "\2f";
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.card-header {
+  border-bottom: 0;
+}

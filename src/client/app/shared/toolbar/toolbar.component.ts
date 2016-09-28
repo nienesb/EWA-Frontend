@@ -1,0 +1,24 @@
+import { Component } from '@angular/core';
+
+/**
+ * This class represents the toolbar component.
+ */
+@Component({
+  moduleId: module.id,
+  selector: 'sd-toolbar',
+  templateUrl: 'toolbar.component.html',
+  styleUrls: ['toolbar.component.css']
+})
+export class ToolbarComponent {
+
+  public isMenuCollapsed: boolean = false;
+
+  public toggleMenu() {
+    this.isMenuCollapsed = !this.isMenuCollapsed;
+    if (this.isMenuCollapsed) {
+      document.getElementById('sd-app').className = 'menu-collapsed';
+    } else {
+      document.getElementById('sd-app').className = '';
+    }
+  }
+}

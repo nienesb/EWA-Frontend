@@ -1,0 +1,3 @@
+<select [(ngModel)]="currentLanguage" (change)="changeLang($event)" name="language">
+  <option *ngFor="let language of supportedLanguages" [value]="language.code">{{language.title}}</option>
+</select>

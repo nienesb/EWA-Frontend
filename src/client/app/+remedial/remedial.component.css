@@ -1,0 +1,110 @@
+:host {
+  display: block;
+  text-align: center;
+}
+
+:host .col-xs-2 {
+  padding-left: 0;
+}
+
+:host .btn-group-vertical.btn-group-sm a.active button {
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+:host .btn-group-vertical.btn-group-sm a.active button,
+:host .btn-group-vertical.btn-group-sm a.active button span {
+  color: #fff;
+}
+
+.btn-group-vertical {
+  float: left;
+  max-width: 5.625rem;
+}
+
+.btn-group-vertical.btn-group-sm button {
+  font-size: 0.625rem;
+  max-width: 5.625rem;
+  padding-top: 0.5rem;
+  width: 100%;
+}
+
+.input-group span {
+  width: 150px;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  background-color: transparent;
+  border: 0;
+}
+
+.roundedTwo {
+  float: left;
+}
+
+.outer {
+  float: left;
+  line-height: 30px;
+  margin-left: 10px;
+  color: #8e8e93;
+  cursor: pointer;
+}
+
+.btn-group-vertical {
+  float: left;
+  margin-top: 0;
+}
+
+.btn-group-vertical a {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.btn-group-vertical a span {
+  float: left;
+  width: 100%;
+  color: #FFF;
+  word-wrap: break-word;
+}
+
+.btn-group-vertical a:hover,
+.btn-group-vertical a.active {
+  background-color: #0385f5
+}
+
+.btn-group-vertical a:hover>.forms-icon:before,
+.btn-group-vertical a.active>.forms-icon:before {
+  color: #FFF;
+}
+
+.btn-group-vertical.btn-group-sm button {
+  font-size: 0.625rem;
+  max-width: 5.625rem;
+  padding-top: 0.5rem;
+  width: 100%;
+}
+
+.forms-icon:before {
+  font-size: 2rem;
+  color: #FFF;
+}
+
+.tripInfoMenu {
+  background-color: #0275d8;
+  float: left;
+  width: 80px;
+  height: 100%;
+  position: absolute;
+  top: 48px;
+  bottom: 0;
+  left: -1.1rem;
+  z-index: 1;
+}
+
+.col-xs-11 {
+  width: 100%;
+  margin-left: 33px;
+}
