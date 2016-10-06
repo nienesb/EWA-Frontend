@@ -121,3 +121,37 @@ a.collapse-menu-link {
     content: '20e';
     margin-left: 10px;
 }
+
+.menu {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    background: #FFF;
+    border: 2px solid #e1e1e1;
+    border-top: 0;
+    z-index: 9999;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-top: 0;
+}
+
+.menu ul li a {
+    margin-right: 0;
+    padding: 16px 20px;
+    cursor: pointer;
+}
+
+.menu ul li a:hover {
+    background-color: #e1e1e1;
+}
+
+.menu ul li a span {
+    margin-right: 10px;
+}

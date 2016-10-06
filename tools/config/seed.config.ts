@@ -144,7 +144,7 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'Project EWA';
+  APP_TITLE = 'AMBU Flow';
 
   /**
    * The base folder of the applications source files.
@@ -316,7 +316,7 @@ export class SeedConfig {
     packageConfigPaths: [
       `/node_modules/*/package.json`,
       `/node_modules/**/package.json`,
-      `/node_modules/@angular/*/package.json`,
+      `/node_modules/@angular/*/package.json`
     ],
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
@@ -346,9 +346,23 @@ export class SeedConfig {
       '*': 'node_modules/*'
     },
     packages: {
-      rxjs: { defaultExtension: 'js' }
+      rxjs: { defaultExtension: 'js' },
+      'angular2-modal': {
+        defaultExtension: 'js',
+        main: 'bundles/angular2-modal.umd'
+      },
+      'angular2-modal/plugins/bootstrap': {
+        defaultExtension: 'js',
+        main: 'angular2-modal.bootstrap.umd'
+      },
+      'ng2-translate/ng2-translate': {
+        defaultExtension: 'js'
+      }
     },
     map: {
+      'angular2-modal': `${this.APP_BASE}node_modules/angular2-modal`,
+      'angular2-modal/plugins/bootstrap': `${this.APP_BASE}node_modules/angular2-modal/bundles/angular2-modal.bootstrap.umd.js`,
+      'ng2-translate/ng2-translate': `${this.APP_BASE}node_modules/ng2-translate`
     }
   };
 
@@ -365,12 +379,14 @@ export class SeedConfig {
    */
   SYSTEM_BUILDER_CONFIG: any = {
     defaultJSExtensions: true,
+    base: this.PROJECT_ROOT,
     packageConfigPaths: [
-      join(this.PROJECT_ROOT, 'node_modules', '*', 'package.json'),
-      join(this.PROJECT_ROOT, 'node_modules', '@angular', '*', 'package.json')
+      join('node_modules', '*', 'package.json'),
+      join('node_modules', '@angular', '*', 'package.json')
     ],
     paths: {
-      [`${this.TMP_DIR}/*`]: `${this.TMP_DIR}/*`,
+      [join(this.TMP_DIR, 'app', '*')]: `${this.TMP_DIR}/app/*`,
+      'node_modules/*': 'node_modules/*',
       '*': 'node_modules/*'
     },
     packages: {
@@ -411,10 +427,25 @@ export class SeedConfig {
         defaultExtension: 'js'
       },
       'rxjs': {
+        main: 'Rx.js',
+        defaultExtension: 'js'
+      },
+      'angular2-modal': {
+        defaultExtension: 'js',
+        main: 'bundles/angular2-modal.umd'
+      },
+      'angular2-modal/plugins/bootstrap': {
+        defaultExtension: 'js',
+        main: 'angular2-modal.bootstrap.umd'
+      },
+      'ng2-translate/ng2-translate': {
         defaultExtension: 'js'
       }
     },
     map: {
+      'angular2-modal': join(this.PROJECT_ROOT, 'node_modules/angular2-modal'),
+      'angular2-modal/plugins/bootstrap': join(this.PROJECT_ROOT, 'node_modules/angular2-modal/bundles/angular2-modal.bootstrap.umd.js'),
+      'ng2-translate/ng2-translate': join(this.PROJECT_ROOT, 'node_modules/ng2-translate')
     }
   };
 
@@ -455,30 +486,7 @@ export class SeedConfig {
      */
     'browser-sync': {
       middleware: [require('connect-history-api-fallback')({
-        index: `${this.APP_BASE}index.html`,
-        rewrites: [
-          {
-            from: new RegExp(`^${this.NPM_BASE}.*$`),
-            to: (context:any) => context.parsedUrl.pathname
-          },
-          {
-            from: new RegExp(`^\/${this.BOOTSTRAP_DIR}\/.*$`),
-            to: (context:any) => context.parsedUrl.pathname
-          },
-          {
-            from: new RegExp(`^${this.APP_BASE}${this.APP_SRC}\/.*$`),
-            to: (context:any) => context.parsedUrl.pathname
-          },
-          {
-            from: new RegExp(`^${this.ASSETS_SRC.replace(this.APP_SRC, '')}\/.*$`),
-            to: (context:any) => context.parsedUrl.pathname
-          },
-          {
-            from: new RegExp(`^${this.CSS_DEST.replace(this.APP_DEST, '')}\/.*$`),
-            to: (context:any) => `/${slash(join(this.APP_DEST, context.parsedUrl.pathname))}`
-          }
-        ],
-        disableDotRule: true
+        index: `${this.APP_BASE}index.html`
       })],
       port: this.PORT,
       startPath: this.APP_BASE,

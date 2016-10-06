@@ -50,3 +50,4 @@ export class HomeComponent{
     this.financeActive = this.financePageActive ? 'active' : '';
   };
 }
+

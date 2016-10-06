@@ -25,12 +25,12 @@ export class ProjectConfig extends SeedConfig {
 
     // Add `NPM` third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
+      ...this.NPM_DEPENDENCIES,
       { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true },
       { src: 'ionicons/css/ionicons.min.css', inject: true },
-      { src: 'primeui/themes/redmond/theme.css', inject: true},
-      { src: 'font-awesome/css/font-awesome.min.css', inject: true},
-      { src: 'primeui/primeui-ng-all.min.css', inject: true},
-      ...this.NPM_DEPENDENCIES
+      { src: 'primeng/resources/themes/redmond/theme.css', inject: true },
+      { src: 'primeng/resources/primeng.min.css', inject: true },
+      { src: 'font-awesome/css/font-awesome.min.css', inject: true }
     ];
 
     // Add `local` third-party libraries to be injected/bundled.

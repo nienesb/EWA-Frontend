@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import { Routes, provideRoutes } from '@angular/router';
+import { LoginRoutes, authProviders } from './+login/index';
 import { HomeRoutes } from './+home/index';
 import { AboutRoutes } from './+about/index';
 import { PropPhaseRoutes } from './+propphase/index';
@@ -10,5 +11,11 @@ export const routes: Routes = [
   ...AboutRoutes,
   ...PropPhaseRoutes,
   ...ExamScheduleRoutes,
-  ...RemedialRoutes
+  ...RemedialRoutes,
+  ...LoginRoutes
+];
+
+export const APP_ROUTER_PROVIDERS = [
+  provideRoutes(routes),
+  authProviders
 ];

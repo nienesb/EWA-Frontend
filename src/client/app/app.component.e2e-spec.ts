@@ -5,7 +5,7 @@ describe('App', () => {
   });
 
   it('should have a title', () => {
-    expect(browser.getTitle()).toEqual('project EWA');
+    expect(browser.getTitle()).toEqual('AMBU Flow');
   });
 
   it('should have <nav>', () => {

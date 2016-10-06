@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Config } from './shared/index';
+import { ApiService, Config } from './shared/index';
 import { TranslateService } from 'ng2-translate/ng2-translate';
 
 /**
@@ -13,7 +13,7 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 })
 
 export class AppComponent {
-  constructor(private translate: TranslateService) {
+  constructor(private apiService: ApiService, private translate: TranslateService) {
     console.log('Environment config', Config);
     document.getElementById('preloader').style.display = 'none';
 
