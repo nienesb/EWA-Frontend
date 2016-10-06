@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Config } from '../config/env.config';
+import { User } from '../models/index';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
@@ -11,24 +12,37 @@ export class AuthService {
   isLoggedIn: boolean = false;
   awaitingRequest: boolean = false;
   message: string;
+  public user: User = new User();
   public tempUsers = {
     'users': [{
             'email': 'berfu.taluy@hva.nl',
-            'age': '25',
+            'age': 25,
             'name': 'Berfu',
             'role': 'Student'
         },
         {
             'email': 'milan.steenwinkel@hva.nl',
-            'age': '22',
+            'age': 22,
             'name': 'Milan',
             'role': 'Student'
         },
         {
-            'email': 'jimmy.jimster@hva.nl',
-            'age': '20',
+            'email': 'jimmy.degraaf@hva.nl',
+            'age': 20,
             'name': 'Jimmy',
             'role': 'Student'
+        },
+        {
+          'email': 'job.lohman@hva.nl',
+          'age': 26,
+          'name': 'Job',
+          'role': 'Student'
+        },
+        {
+          'email': 'janine.boeser@hva.nl',
+          'age': 23,
+          'name': 'Janine',
+          'role': 'Student'
         }
     ]};
 
@@ -39,7 +53,7 @@ export class AuthService {
     console.log(this.tempUsers);
     for(let user of this.tempUsers.users) {
       if(user.email === email) {
-        this.processLogin(user.email);
+        this.processLogin(user);
       }
     }
     if(!this.isLoggedIn) {
@@ -58,13 +72,19 @@ export class AuthService {
     }
   }
 
-  processLogin(token: string) {
-    localStorage.setItem('EwaAuthentication', token);
+  processLogin(user: User) {
+    localStorage.setItem('EwaAuthentication', user.email);
+    localStorage.setItem('userAge', user.age.toString());
+    localStorage.setItem('userName', user.name);
+    localStorage.setItem('userRole', user.role);
     this.isLoggedIn = true;
   };
 
-  processTokenRefresh(token: string) {
-    localStorage.setItem('EwaAuthentication', token);
+  processTokenRefresh(user: User) {
+    localStorage.setItem('EwaAuthentication', user.email);
+    localStorage.setItem('userAge', user.age.toString());
+    localStorage.setItem('userName', user.name);
+    localStorage.setItem('userRole', user.role);
     this.isLoggedIn = true;
   };
 
