@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>Checkbox Round Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="8" cy="8" rx="8" ry="8"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16" height="16" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Financieel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rit:-Facturatie-overzicht" transform="translate(-325.000000, -277.000000)">
+            <g id="Group-6" transform="translate(325.000000, 177.000000)">
+                <g id="Check-Round" transform="translate(0.000000, 100.000000)">
+                    <g id="Check">
+                        <use id="Oval-Copy-16" stroke="#2FA0D8" mask="url(#mask-2)" stroke-width="2" fill="#66BFE9" xlink:href="#path-1"></use>
+                        <path d="M12.8651596,5.43276688 C12.9487766,5.51510731 12.9492021,5.64978816 12.8664362,5.73276688 L6.70707447,11.8917031 C6.62430851,11.974469 6.48898936,11.974469 6.4062234,11.8917031 L5.02537234,10.5104265 C4.94218085,10.4276605 4.8068617,10.2923414 4.72452128,10.2095754 L3.06239362,8.5470222 C2.97920213,8.46468178 2.97920213,8.32936263 3.06239362,8.24617114 L4.44367021,6.86489454 C4.52643617,6.78212858 4.66175532,6.78212858 4.74452128,6.86489454 L6.40664894,8.5270222 C6.48984043,8.60978816 6.62515957,8.60978816 6.7075,8.5270222 L11.1726064,4.06234135 C11.2553723,3.97957539 11.391117,3.97914986 11.474734,4.06149029 L12.8651596,5.43276688 L12.8651596,5.43276688 Z" id="Shape-Copy-4" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

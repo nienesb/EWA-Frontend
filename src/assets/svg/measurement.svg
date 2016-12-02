@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="25px" viewBox="0 0 8 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>measurement</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="SubSub-Patient-V5" transform="translate(-35.000000, -318.000000)" stroke="#FFFFFF">
+            <g id="measurement" transform="translate(36.000000, 319.000000)">
+                <path d="M5,17.779 L5,2 C5,0.896 4.105,0 3,0 C1.895,0 1,0.896 1,2 L1,17.779 C0.39,18.328 0,19.115 0,20 C0,21.657 1.343,23 3,23 C4.657,23 6,21.657 6,20 C6,19.115 5.61,18.328 5,17.779 L5,17.779 Z" id="Stroke-462"></path>
+                <path d="M4,20 C4,20.552 3.552,21 3,21 C2.448,21 2,20.552 2,20 C2,19.448 2.448,19 3,19 C3.552,19 4,19.448 4,20 L4,20 Z" id="Stroke-464"></path>
+                <path d="M3,19 L3,9" id="Stroke-466"></path>
+            </g>
+        </g>
+    </g>
+</svg>

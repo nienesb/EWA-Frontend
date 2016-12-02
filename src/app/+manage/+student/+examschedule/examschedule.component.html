@@ -1,0 +1,127 @@
+<div class="nav-title">
+    <span>Examen planning</span>
+</div>
+<div class="examschedule-container trip-page-base">
+    <div class="col-xl-6">
+        <div class="card flowCard">
+            <div class="card-header">
+                <span>Schema</span>
+            </div>
+            <div class="card-body">
+                <div class="period-header">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a (click)="activateSchemeBlok('schemeBlok1Active')" [class.active]="schemeBlok1Active" class="nav-link">Blok 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a (click)="activateSchemeBlok('schemeBlok2Active')" [class.active]="schemeBlok2Active" class="nav-link">Blok 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a (click)="activateSchemeBlok('schemeBlok3Active')" [class.active]="schemeBlok3Active" class="nav-link">Blok 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a (click)="activateSchemeBlok('schemeBlok4Active')" [class.active]="schemeBlok4Active" class="nav-link">Blok 4</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="period-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Datum</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="schemeBlok1Active">
+                            <tr>
+                                <td>Blok 2 periode</td>
+                                <td>25/08 - 07/11</td>
+                                <td>Bezig - Week 4</td>
+                            </tr>
+                            <tr>
+                                <td>Herkansing week</td>
+                                <td>07/11</td>
+                                <td>Over 3 weken</td>
+                            </tr>
+                            <tr>
+                                <td>Tentamen week</td>
+                                <td>08/11</td>
+                                <td>Over 4 weken</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6">
+        <div class="card flowCard">
+            <div class="card-header">
+                <span>Periode</span>
+            </div>
+            <div class="card-body">
+                <div class="period-header">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a (click)="activatePeriodBlok('periodBlok1Active')" [class.active]="periodBlok1Active" class="nav-link">Blok 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a (click)="activatePeriodBlok('periodBlok2Active')" [class.active]="periodBlok2Active" class="nav-link">Blok 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a (click)="activatePeriodBlok('periodBlok3Active')" [class.active]="periodBlok3Active" class="nav-link">Blok 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a (click)="activatePeriodBlok('periodBlok4Active')" [class.active]="periodBlok4Active" class="nav-link">Blok 4</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="period-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Vaknr.</th>
+                                <th>Naam</th>
+                                <th>Onderdelen</th>
+                                <th>Tentamenperiode</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="periodBlok1Active">
+                            <tr>
+                                <td>PS001</td>
+                                <td>Project Skills</td>
+                                <td>(PS001-theory) Theorie</td>
+                                <td>Blok 2 en 3</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>(PS001-pract) Practicum</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>PS001</td>
+                                <td>Project Skills</td>
+                                <td>(PS001-theory) Theorie</td>
+                                <td>Blok 2 en 3</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>(PS001-pract) Practicum</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Project 1</td>
+                                <td>Project Virt</td>
+                                <td>(PS001-theory) Theorie</td>
+                                <td>Blok 3 en 2014 blok 1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

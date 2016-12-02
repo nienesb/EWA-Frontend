@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://use.typekit.net/vap1quj.js"></script>
+  <script>
+    try {
+      Typekit.load({
+        async: true
+      });
+    } catch (e) {}
+  </script>
+  <style>
+  @font-face{
+    font-family:iformsicons;
+    src:url(/assets/iformsicons.ttf?v=1.0.0) 
+    format("ttf");
+  }
+  @font-face{
+    font-family:ionicons;
+    src:url(/assets/ionicons.ttf?v=2.0.1) 
+    format("ttf");
+  }
+  </style>
+  <title>SIS EWA</title>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <sd-app id="sd-app"></sd-app>
+  <div id="preloader" [hidden]="hideSpinner == true">
+    <div></div>
+  </div>
+</body>
+</html>

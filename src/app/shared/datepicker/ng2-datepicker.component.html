@@ -1,0 +1,50 @@
+<div (clickOutside)="close()" [class]="class">
+  <div [class.opened]="opened || expanded">
+    <form #dateForm="ngForm">
+        <input *ngIf="changeTime" class="form-control" type="text" [disabled]="!viewDate" name="givenTime" value="{{viewTime}}" (change)="updateViewTime($event.target.value)" placeholder="uu:mm:ss" pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}" [ngClass]="{'changeTime' : changeTime, 'ngvalid' : viewDate && isTimeValid, 'nginvalid' : viewDate && !isTimeValid}"/>
+        <input class="form-control" [ngClass]="{'changeDate' : changeTime, 'ngvalid' : viewDate && isDateValid, 'nginvalid' : viewDate && !isDateValid}" type="text" value="{{viewDate && viewDate.length >= 10 ? (viewDate | date:'dd-MM-yyyy') : viewDate}}" (change)="updateViewDate($event.target.value)" name="givenDate" placeholder="DD-MM-YYYY" pattern="((0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}|[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01]))" />
+        <i (click)="toggle()" class="calendar-pos ion-ios-calendar-outline"></i>
+    </form>
+  </div>
+  <div class="ui-kit-calendar-cal-container" [class.opened]="opened">
+    <div class="ui-kit-calendar-cal-years" [class.opened]="opened">
+        <i *ngIf="prevYearAllowed" class="left-button ion-arrow-left-b" (click)="prevYear()"></i>
+        <span class="yearclickable" (click)="openYear()">{{ date ? date.format('YYYY') : date}}</span>
+        <i *ngIf="nextYearAllowed" class="right-button ion-arrow-right-b" (click)="nextYear()"></i>
+    </div>
+    <div class="ui-kit-calendar-cal-years" [class.opened]="opened">
+        <i *ngIf="prevMonthAllowed" class="left-button ion-arrow-left-b" (click)="prevMonth()"></i>
+        <span>{{ date ? date.format('MMMM') : date }}</span>
+        <i *ngIf="nextMonthAllowed" class="right-button ion-arrow-right-b" (click)="nextMonth()"></i>
+    </div>
+    <div *ngIf="yearsActive">
+      <div class="ui-kit-calendar-cal-years" [class.opened]="opened">
+          <i *ngIf="prevYearsAllowed" class="left-button ion-arrow-left-b" (click)="prevFewYears()"></i>
+          <span>{{ selectedYears }}</span>
+          <i *ngIf="nextYearsAllowed" class="right-button ion-arrow-right-b" (click)="nextFewYears()"></i>
+      </div>
+      <div class="ui-kit-calendar-days" [class.opened]="opened">
+        <span *ngFor="let year of years; let i = index;" (click)="selectYear($event, i)"> {{ year }} </span>
+      </div>
+    </div>
+    <div *ngIf="daysActive">
+      <div class="ui-kit-calendar-day-names">
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+        <span>Sun</span>
+      </div>
+      <div class="ui-kit-calendar-days">
+        <span *ngFor="let d of days; let i = index;" 
+              (click)="selectDate($event, i)"
+              [class.today]="d.today"
+              [class.is-active]="d.selected">
+          {{ d.day }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

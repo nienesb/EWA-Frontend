@@ -1,0 +1,125 @@
+@import '../../../styles'; 
+
+:host {
+  border-color: #e1e1e1;
+  border-style: solid;
+  border-width: 0 0 1px;
+  display: block;
+  height: 48px;
+  padding: 0 16px;
+}
+
+.sidebar {
+  width: 13.25rem;
+  top: 66px;
+  left: 0;
+  z-index: 900;
+  display: block;
+  min-height: 100%;
+  background-color: #fff;
+  height: 100%;
+  position: fixed;
+  padding-top: 1.125rem;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+  display: block;
+  position: relative;
+  float: none;
+  min-height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  font-family: 'proxima-nova', 'sans-serif';
+  color: #adbbca;
+  padding-left: 18px;
+}
+
+.sidebar a>div:first-of-type {
+  text-align: center;
+}
+
+.sidebar a:hover {
+  color: #283e57;
+  text-decoration: none;
+  border-color: $flow-blue;
+  border-style: solid;
+  border-right-width: 0.25rem;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+}
+
+.sidebar a:hover .forms-icon {
+  color: $flow-blue;
+}
+
+.sidebar a.active {
+  font-weight: bold;
+  text-decoration: none;
+  border-right: 0.25rem solid $flow-blue;
+  color: #283e57;
+}
+
+.sidebar a.active .forms-icon {
+  color: $flow-blue;
+}
+
+.sidebar a .forms-icon {
+  color: #adbbca;
+}
+
+.sidebar a div {
+  display: inline-block;
+  width: 14px;
+}
+
+.sidebar a span {
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  font-stretch: normal;
+  font-family: 'proxima-nova', 'sans-serif';
+  font-weight: 700;
+}
+
+a.sidebar-submenu {
+  cursor: pointer;
+  cursor: hand;
+}
+
+ul.sidebar-sublist {
+  margin: 0;
+  padding: 0;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+ul.sidebar-sublist li {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-submenu-icon {
+  position: absolute;
+  left: 11.75rem;
+}
+
+:host .ion-navicon {
+  display: block;
+  color: #8e8e93;
+  position: relative;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+:host .ion-navicon:hover {
+  color: $flow-blue;
+}
+
+:host .ion-navicon:before {
+  font-size: 36px;
+}

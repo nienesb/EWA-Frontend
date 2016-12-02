@@ -1,0 +1,34 @@
+<nav class="sidebar">
+    <i class="forms-icon ion-navicon" (click)="toggleMenu()"></i>
+    <a [routerLink]="['/home']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <div>
+            <i class="forms-icon ion-android-car"></i>
+        </div>
+        <span>{{'tripsNav' | translate}}</span>
+    </a>
+    <a class="sidebar-submenu {{activeUserClass}}" (click)="toggleUsersSubMenu()">
+        <div>
+            <i class="forms-icon ion-ios-people"></i>
+        </div>
+        <span>{{'usersNav' | translate}}</span>
+        <div class="sidebar-submenu-icon">
+            <i class="ion-chevron-down"></i>
+        </div>
+    </a>
+    <ul *ngIf="usersSubMenu" class="sidebar-sublist">
+        <li class="sidebar-sublist-item">
+            <a>
+                <div>
+                    <i class="forms-icon ion-person-add"></i>
+                </div>
+                <span>Coming Soon</span>
+            </a>
+        </li>
+    </ul>
+    <a [routerLink]="['/about']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <div>
+            <i class="forms-icon ion-information-circled"></i>
+        </div>
+        <span>{{'infoNav' | translate}}</span>
+    </a>
+</nav>

@@ -1,0 +1,21 @@
+<a class="al-logo clearfix"><img src="/assets/svg/icon-sis.svg" /></a>
+<a class="toolicons ion-ios-home-outline" [routerLink]="['/home']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"></a>
+<a class="toolicons" [routerLink]="['/manage/student/propphase']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><img src="/assets/svg/hoofdmenu_facturatie.svg" /></a>
+
+<div class="employeeWindow">
+    <a class="toolicons"><img src="/assets/svg/hoofdmenu_bel.svg" /></a>
+    <div class="profileWindow">
+        <div class="windowLeft">
+            <span class="employeeName">{{this.adalService.userInfo.profile.name}}</span>
+            <span class="employeeRole">Student</span>
+        </div>
+        <img class="profilePic" [(src)]="profileImageSource" alt="{{this.adalService.userInfo.profile.name}}">
+    </div>
+    <a (click)="toggleProfileMenu()" class="collapse-menu-link"><img src="/assets/svg/arrow_down.svg" /></a>
+    <div *ngIf="menuActive" class="menu">
+        <ul>
+            <li><lang-switcher></lang-switcher></li>
+            <li><a (click)="logout()"><span class="ion-log-out"></span>{{'logoutNav' | translate}}</a></li>
+        </ul>
+    </div>
+</div>

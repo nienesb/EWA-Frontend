@@ -1,0 +1,65 @@
+@import '../../../styles';
+
+:host {
+  display: block;
+  text-align: center;
+}
+
+:host .col-xs-1 {
+  padding-left: 0;
+}
+
+:host .btn-group-vertical.btn-group-sm a.active button {
+  background-color: $flow-darkblue;
+  border-color: $flow-darkblue;
+}
+
+:host .btn-group-vertical.btn-group-sm a.active button,
+:host .btn-group-vertical.btn-group-sm a.active button span {
+  color: $white;
+}
+
+.btn-group-vertical {
+  float: left;
+  margin-top: 0;
+}
+
+.btn-group-vertical a {
+  background-color: $flow-darkblue;
+  float: left;
+  height: 5rem;
+  padding: 16px 0;
+  width: 100%;
+}
+
+.btn-group-vertical a span {
+  color: $white;
+  float: left;
+  margin-top: 4px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.btn-group-vertical a:hover,
+.btn-group-vertical a.active {
+  background-color: $flow-blue;
+  color: $white;
+}
+
+.btn-group-vertical a:hover>.forms-icon:before,
+.btn-group-vertical a.active>.forms-icon:before,
+.btn-group-vertical a:hover span,
+.btn-group-vertical a.active span {
+  color: $white;
+}
+
+.btn-group-vertical.btn-group-sm button {
+  font-size: 0.625rem;
+  max-width: 5.625rem;
+  padding-top: 0.5rem;
+  width: 100%;
+}
+
+.col-xs-11 {
+  width: calc(100% - 96px);
+}

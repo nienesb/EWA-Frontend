@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>Plus Round</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="8" cy="8" rx="8" ry="8"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16" height="16" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Patienten" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Patient:-Meten-T1-Selectie" transform="translate(-227.000000, -575.000000)">
+            <g id="Form" transform="translate(28.000000, 118.000000)">
+                <g id="Group-3" transform="translate(199.000000, 17.000000)">
+                    <g id="Plus-Round" transform="translate(0.000000, 440.000000)">
+                        <g id="Plus">
+                            <use id="Oval-Copy-26" stroke="#B8C0C8" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                            <path d="M11.9183673,8.97959184 C11.9183673,9.16016327 11.7724082,9.30612245 11.5918367,9.30612245 L4.40816327,9.30612245 C4.22759184,9.30612245 4.08163265,9.16016327 4.08163265,8.97959184 L4.08163265,7.02040816 C4.08163265,6.83983673 4.22759184,6.69387755 4.40816327,6.69387755 L11.5918367,6.69387755 C11.7724082,6.69387755 11.9183673,6.83983673 11.9183673,7.02040816 L11.9183673,8.97959184 L11.9183673,8.97959184 Z" id="Shape" fill="#AFB8C1"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

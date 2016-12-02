@@ -1,0 +1,19 @@
+<div class="trip-sub-menu">
+    <div class="btn-group-vertical btn-group-sm">
+        <a [routerLink]="['propphase']" routerLinkActive="active">
+            <span class="icon-details"></span>
+            <span class="menuTitle">propphase</span>
+        </a>
+        <a [routerLink]="['examschedule']" routerLinkActive="active">
+            <span class="icon-situation"></span>
+            <span class="menuTitle">Examschedule</span>
+        </a>
+        <a [routerLink]="['remedial']" routerLinkActive="active">
+            <span class="icon-objective"></span>
+            <span class="menuTitle">remedial</span>
+        </a>
+    </div>
+</div>
+<div class="trip-main">
+    <router-outlet></router-outlet>
+</div>

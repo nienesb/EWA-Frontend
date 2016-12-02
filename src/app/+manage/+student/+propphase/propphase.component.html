@@ -1,0 +1,101 @@
+<div class="nav-title">
+    <span>Propedeuse fase</span>
+</div>
+
+<div class="trip-page-base">
+    <div class="col-xl-8">
+        <div class="card flowCard">
+            <div class="card-header">
+                <span>Voortgangbalk</span>
+            </div>
+            <div class="card-body">
+                <progress class="progress progress-striped progress-success" value="19" max="60"></progress>
+                <div class="studypoints-container">
+                    <p>Studiepunten (eenh.): 60.00 vereist, 19.00 behaald, 41 nodig.</p>
+                    <p>Studiedelen: 13 vereist, 6 behaald, 7 nodig.</p>
+                    <button class="btn btn-primary">Propedeuse verzoek genereren</button>
+                </div>
+
+                <div class="legenda-container">
+                    <p><span class="colorGreen"></span> Voortgang</p>
+                    <p><span class="colorRed"></span> Negatief BSA ontwijken</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="period-container top10">
+            <div class="period-header">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a (click)="activateBlok('blok1Active')" [class.active]="blok1Active" class="nav-link">Blok 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="activateBlok('blok2Active')" [class.active]="blok2Active" class="nav-link">Blok 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="activateBlok('blok3Active')" [class.active]="blok3Active" class="nav-link">Blok 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="activateBlok('blok4Active')" [class.active]="blok4Active" class="nav-link">Blok 4</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="period-body">
+                <table class="table table-striped table-inverse">
+                    <thead>
+                        <tr>
+                            <th>Vaknr.</th>
+                            <th>Naam</th>
+                            <th>Onderdelen</th>
+                            <th>Status</th>
+                            <th>Herkansing periode</th>
+                            <th>AVG</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="blok1Active">
+                        <tr>
+                            <td>PS001</td>
+                            <td>Project Skills</td>
+                            <td>(PS001-theory) Theorie</td>
+                            <td>Behaald</td>
+                            <td>Blok 3 (aanvragen)</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>(PS001-pract) Practicum</td>
+                            <td>Niet behaald</td>
+                            <td>Blok 3 (aanvragen)</td>
+                            <td>behaald</td>
+                        </tr>
+                        <tr>
+                            <td>PS001</td>
+                            <td>Project Skills</td>
+                            <td>(PS001-theory) Theorie</td>
+                            <td>Behaald</td>
+                            <td>Blok 3 (aanvragen)</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>(PS001-pract) Practicum</td>
+                            <td>Niet behaald</td>
+                            <td>Blok 3 (aanvragen)</td>
+                            <td>behaald</td>
+                        </tr>
+                        <tr>
+                            <td>Project 1</td>
+                            <td>Project Virt</td>
+                            <td>(PS001-theory) Theorie</td>
+                            <td>Tentamen blok 3</td>
+                            <td>n.v.t.</td>
+                            <td>gr</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

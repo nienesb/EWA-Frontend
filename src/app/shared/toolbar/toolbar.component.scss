@@ -1,0 +1,206 @@
+@import '../../../styles';
+
+:host {
+  background-color: $white;
+  border-bottom: 1px solid $flow-lightergray;
+  height: 61px;
+  left: 0;
+  min-width: 320px;
+  padding: 0;
+  position: fixed;
+  z-index: 1500;
+  width: 100%;
+}
+
+a {
+  color: $black;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 42px;
+  margin-right: 20px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+a.router-link-active {
+  color: #106cc8;
+}
+
+a.al-logo {
+  color: $white;
+  display: inline-block;
+  float: left;
+  font-size: 24px;
+  font-family: 'proxima-nova', 'sans-serif';
+  line-height: 58px;
+  margin-right: 0;
+  outline: none !important;
+  white-space: nowrap;
+  width: 5rem;
+}
+
+a.al-logo img {
+  height: 1.5rem;
+  width: 100%;
+}
+
+a.al-logo span {
+  color: #db1a5b;
+}
+
+a.collapse-menu-link:hover {
+  text-decoration: none;
+  color: #00abff;
+}
+
+div.employeeWindow {
+  min-width: 200px;
+  height: 50px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 0;
+}
+
+div.employeeWindow .profileWindow {
+  float: left;
+  margin-top: 5px;
+  padding-left: 15px;
+}
+
+div.employeeWindow .profileWindow .windowLeft {
+  float: left;
+  display: block;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+div.employeeWindow .profileWindow .windowLeft span {
+  display: block;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+div.employeeWindow .profileWindow .windowLeft .employeeName {
+  color: #283f57;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+div.employeeWindow .profileWindow .windowLeft .employeeRole {
+  color: $flow-gray;
+}
+
+div.employeeWindow .profileWindow .profilePic {
+  float: right;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+div.employeeWindow .ion-ios-bell {
+  float: left;
+  font-size: 32px;
+  color: #cfd6e1;
+  cursor: pointer;
+  margin-right: 0;
+}
+
+a.collapse-menu-link {
+  color: #8e8e93;
+  cursor: pointer;
+  display: block;
+  font-size: 31px;
+  margin-top: 9px;
+  margin-right: 0;
+  padding: 0;
+  text-align: right;
+  text-decoration: none;
+  width: 1.25rem;
+  float: right;
+  content: '20e';
+}
+
+.settingsmenu {
+  position: absolute;
+  top: 66px;
+  background: #FFF;
+  border: 2px solid #e1e1e1;
+  border-top: 0;
+  z-index: 9999;
+}
+
+.menu {
+  position: absolute;
+  top: 66px;
+  right: 0;
+  background: #FFF;
+  border: 2px solid #e1e1e1;
+  border-top: 0;
+  z-index: 9999;
+}
+.settingsmenu ul,
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.settingsmenu,
+.menu ul li {
+  margin-top: 0;
+}
+
+.menu ul li lang-switcher {
+  margin-right: 0;
+  padding: 16px 20px;
+  cursor: pointer;
+  display:block;
+}
+.settingsmenu ul li a,
+.menu ul li a {
+  margin-right: 0;
+  padding: 0 20px;
+  cursor: pointer;
+  display:block;
+}
+
+.settingsmenu ul li a:hover,
+.menu ul li a:hover {
+  background-color: #e1e1e1;
+}
+
+.settingsmenu ul li a span,
+.menu ul li a span {
+  margin-right: 10px;
+}
+
+a.toolicons {
+  padding: 9px 15px;
+  font-size: 38px;
+  line-height: 38px;
+  margin-right: 0;
+  cursor: pointer;
+  float: left;
+  display: block;
+}
+
+a.toolicons i {
+  vertical-align: middle;
+}
+
+a .forms-icon {
+  color: $flow-lightergray;
+  font-size: 31px;
+}
+
+a .forms-icon:before {
+  font-size: 2rem;
+}
+
+a:hover .forms-icon,
+a.active .forms-icon {
+  color: $flow-darkgray;
+}

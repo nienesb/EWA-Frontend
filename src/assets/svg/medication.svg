@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="23px" viewBox="0 0 25 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>medication</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="SubSub-Patient-V5" transform="translate(-28.000000, -480.000000)" stroke="#FFFFFF">
+            <g id="medication" transform="translate(29.000000, 481.000000)">
+                <path d="M18.53575,1.46475 C16.58275,-0.48825 13.41775,-0.48825 11.46475,1.46475 L1.46475,11.46475 C-0.48825,13.41775 -0.48825,16.58275 1.46475,18.53575 C3.41775,20.48875 6.58275,20.48875 8.53575,18.53575 L18.53575,8.53575 C20.48875,6.58275 20.48875,3.41775 18.53575,1.46475 L18.53575,1.46475 Z" id="Stroke-146"></path>
+                <path d="M6.50025,6.50025 L13.50025,13.50025" id="Stroke-148"></path>
+                <path d="M2.87895,17.12155 C1.70695,15.94955 1.70695,14.05055 2.87895,12.87855 L5.99995,10.00055" id="Stroke-150"></path>
+                <path d="M19.16685,7.76315 C18.98585,8.03615 18.77585,8.29515 18.53585,8.53615 L9.80885,17.26215 C10.98285,19.48415 13.31285,21.00015 15.99985,21.00015 C19.86585,21.00015 22.99985,17.86615 22.99985,14.00015 C22.99985,11.27515 21.43985,8.92015 19.16685,7.76315 L19.16685,7.76315 Z" id="Stroke-152"></path>
+                <path d="M13.50025,14.00025 L21.00025,14.00025" id="Stroke-154"></path>
+            </g>
+        </g>
+    </g>
+</svg>

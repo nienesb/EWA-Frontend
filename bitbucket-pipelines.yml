@@ -1,0 +1,38 @@
+# You can use a Docker image from Docker Hub or your own container
+# registry for your build environment.
+image: node:6.9
+
+pipelines:
+  default:
+    - step:
+        script: # Modify the commands below to build your repository.
+          - node --version
+          - npm --version
+          - npm install -g angular-cli@1.0.0-beta.20-4
+          - npm install --unsafe-perm
+          - ng build --target=production
+  branches:
+    master:
+      - step:
+          script:
+            - node --version
+            - npm --version
+            - npm install -g angular-cli@1.0.0-beta.20-4
+            - npm install --unsafe-perm
+            - ng build --target=production
+            - apt-get update
+            - apt-get install ncftp
+            - chmod +x ./deploy-to-azure.bash
+            - ./deploy-to-azure.bash
+    develop:
+      - step:
+          script:
+            - node --version
+            - npm --version
+            - npm install -g angular-cli@1.0.0-beta.20-4
+            - npm install --unsafe-perm
+            - ng build --target=production
+            - apt-get update
+            - apt-get install ncftp
+            - chmod +x ./deploy-to-azure.bash
+            - ./deploy-to-azure.bash

@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+.input-group span {
+  width: 150px;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}

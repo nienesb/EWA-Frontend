@@ -1,0 +1,96 @@
+@import '../../../../styles';
+
+:host {
+  display: block;
+  text-align: center;
+
+  table {
+    tbody {
+      tr > :first-child {
+        text-align: right;
+        width: 12rem;
+      }
+    }
+  }
+
+  .colorGreen {
+    border-left: 2px solid #00f300;
+    margin-right: 3px;
+  }
+
+  .colorRed {
+    border-left: 2px solid red;
+    margin-right: 3px;
+  }
+
+  .flowCard {
+    p {
+      line-height: 20px;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .card-body {
+      position: relative;
+      float: left;
+      background: #FFF;
+      width: 100%;
+      padding: 10px;
+    }
+  }
+
+  .progress {
+    position: relative;
+  }
+  .progress:after {
+    position: absolute;
+    width: 100%;
+    left: 80%;
+    right: 0;
+    top: 0px;
+    bottom: 0;
+    content: "";
+    font-size: 16px;
+    border-left: 2px solid red;
+  }
+
+  .studypoints-container {
+    display: block;
+    width: 70%;
+    word-wrap: break-word;
+
+    p {
+      text-align: left;
+    }
+
+    button {
+      float: left;
+      background-color: #0275d8;
+    }
+  }
+
+  .legenda-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    display: block;
+
+    p {
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  .period-container {
+    display: block;
+    float: left;
+    width: 100%;
+  }
+
+  .table {
+    color: #FFF;
+  }
+}

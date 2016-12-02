@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>Plus Round</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="8" cy="8" rx="8" ry="8"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16" height="16" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Patienten" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Patient:-Meten-T1" transform="translate(-895.000000, -478.000000)">
+            <g id="Needs-title" transform="translate(695.000000, 250.000000)">
+                <g id="Form" transform="translate(1.000000, 91.000000)">
+                    <g id="Group-3" transform="translate(199.000000, 17.000000)">
+                        <g id="Plus-Round" transform="translate(0.000000, 120.000000)">
+                            <g id="Plus">
+                                <use id="Oval-Copy-26" stroke="#B8C0C8" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+                                <path d="M12,8.83551684 C12,8.99202697 11.8715778,9.11987637 11.7140841,9.11987637 L9.14281682,9.11987637 L9.14281682,11.7150785 C9.14281682,11.8721506 9.01467683,12 8.85718318,12 L7.14281682,12 C6.98532317,12 6.85690093,11.8721506 6.85690093,11.7150785 L6.85690093,9.11987637 L4.28591589,9.11987637 C4.12842224,9.11987637 4,8.99202697 4,8.83551684 L4,7.12879772 C4,6.97228759 4.12842224,6.8444382 4.28591589,6.8444382 L6.85690093,6.8444382 L6.85690093,4.2849215 C6.85690093,4.12784939 6.98532317,4 7.14281682,4 L8.85718318,4 C9.01467683,4 9.14281682,4.12784939 9.14281682,4.2849215 L9.14281682,6.8444382 L11.7140841,6.8444382 C11.8715778,6.8444382 12,6.97228759 12,7.12879772 L12,8.83551684 L12,8.83551684 Z" id="Shape" fill="#B8C0C8"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
