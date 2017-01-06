@@ -144,7 +144,7 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'AMBU Flow';
+  APP_TITLE = 'EWA-Frontend';
 
   /**
    * The base folder of the applications source files.
