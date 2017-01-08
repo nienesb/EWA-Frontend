@@ -9,11 +9,10 @@
                 <span>Voortgangbalk</span>
             </div>
             <div class="card-body">
-                <progress class="progress progress-striped progress-success" value="19" max="60"></progress>
+                <progress class="progress progress-striped progress-success" value="{{apiService.totalPointsEarned}}" max="{{apiService.totalPointsNeeded}}"></progress>
                 <div class="studypoints-container">
-                    <p>Studiepunten (eenh.): 60.00 vereist, 19.00 behaald, 41 nodig.</p>
-                    <p>Studiedelen: 13 vereist, 6 behaald, 7 nodig.</p>
-                    <button class="btn btn-primary">Propedeuse verzoek genereren</button>
+                    <p>Studiepunten (eenh.): {{apiService.totalPointsNeeded}} vereist, {{apiService.totalPointsEarned}} behaald, {{apiService.totalPointsNeeded - apiService.totalPointsEarned}} nodig.</p>
+                    <button (click)="generateProp(apiService.totalPointsNeeded, apiService.totalPointsEarned)" class="btn btn-primary" [disabled]="apiService.totalPointsEarned < apiService.totalPointsNeeded">Propedeuse verzoek genereren</button>
                 </div>
 
                 <div class="legenda-container">
@@ -46,52 +45,18 @@
                         <tr>
                             <th>Vaknr.</th>
                             <th>Naam</th>
-                            <th>Onderdelen</th>
+                            <th>Datum</th>
                             <th>Status</th>
-                            <th>Herkansing periode</th>
                             <th>AVG</th>
                         </tr>
                     </thead>
                     <tbody *ngIf="blok1Active">
-                        <tr>
-                            <td>PS001</td>
-                            <td>Project Skills</td>
-                            <td>(PS001-theory) Theorie</td>
-                            <td>Behaald</td>
-                            <td>Blok 3 (aanvragen)</td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>(PS001-pract) Practicum</td>
-                            <td>Niet behaald</td>
-                            <td>Blok 3 (aanvragen)</td>
-                            <td>behaald</td>
-                        </tr>
-                        <tr>
-                            <td>PS001</td>
-                            <td>Project Skills</td>
-                            <td>(PS001-theory) Theorie</td>
-                            <td>Behaald</td>
-                            <td>Blok 3 (aanvragen)</td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>(PS001-pract) Practicum</td>
-                            <td>Niet behaald</td>
-                            <td>Blok 3 (aanvragen)</td>
-                            <td>behaald</td>
-                        </tr>
-                        <tr>
-                            <td>Project 1</td>
-                            <td>Project Virt</td>
-                            <td>(PS001-theory) Theorie</td>
-                            <td>Tentamen blok 3</td>
-                            <td>n.v.t.</td>
-                            <td>gr</td>
+                        <tr *ngFor="let grade of apiService.resultData">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
                         </tr>
                     </tbody>
                 </table>

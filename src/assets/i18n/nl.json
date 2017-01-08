@@ -2,13 +2,12 @@
     "open": "Open",
     "Closed": "Gesloten",
     "closed": "Gesloten",
-    "tripYes": "Ja",
-    "tripNo": "Nee",
+    "back": "terug",
     "results": "Resultaten",
     "result": "Resultaat",
     "found": "gevonden",
     "foundOutOf": "van de",
     "dashboardNav": "Dashboard",
-    "tripsNav": "Ritten",
-    "settingsNav": "Instellingen"
+    "settingsNav": "Instellingen",
+    "logoutNav": "Uitloggen"
 }

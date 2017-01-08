@@ -11,7 +11,6 @@ export class AuthGuard implements CanActivate {
       this.adalService.login();
       return false;
     } else {
-      // console.log('AuthGuard: User is logged in as ' + this.adalService.userInfo.userName);
       return true;
     }
   }

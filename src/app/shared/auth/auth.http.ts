@@ -9,32 +9,38 @@ export class AuthHttp {
 
   constructor(private adalService: AdalService, private appConfig: AppConfig, private http: Http) {}
 
+  // Uitgecomment stukjes is alleen nodig als we onze token die adal creeert voor verificatie mee
+  // willen geven aan backend, misschien dat we dit in het toekomst toevoegen.
+
   get(url: string): Observable<any> {
-    return Observable.fromPromise(this.adalService.acquireToken(this.adalService.config.loginResource)).flatMap(token => {
-      let options = this.setOptions(token.toString());
-      return this.http.get(this.appConfig.get('API') + url, options);
-    });
+    /*return Observable.fromPromise(this.adalService.acquireToken(this.adalService.config.loginResource)).flatMap(token => {
+      // let options = this.setOptions(token.toString());
+      return this.http.get(this.appConfig.get('API') + url);
+    });*/
+    return this.http.get(this.appConfig.get('API') + url);
   }
 
   post(url: string, data: any): Observable<any> {
-    return Observable.fromPromise(this.adalService.acquireToken(this.adalService.config.loginResource)).flatMap(token => {
+    /*return Observable.fromPromise(this.adalService.acquireToken(this.adalService.config.loginResource)).flatMap(token => {
       let options = this.setOptions(token.toString());
       return this.http.post(this.appConfig.get('API') + url, data, options);
-    });
+    });*/
+    return this.http.post(this.appConfig.get('API') + url, data);
   }
 
   put(url: string, data: any): Observable<any> {
-    return Observable.fromPromise(this.adalService.acquireToken(this.adalService.config.loginResource)).flatMap(token => {
+    /*return Observable.fromPromise(this.adalService.acquireToken(this.adalService.config.loginResource)).flatMap(token => {
       let options = this.setOptions(token.toString());
       return this.http.put(this.appConfig.get('API') + url, data, options);
-    });
+    });*/
+    return this.http.put(this.appConfig.get('API') + url, data, options);
   }
 
-  private setOptions(token: string): RequestOptions {
+  /*private setOptions(token: string): RequestOptions {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', 'Bearer ' + token);
     let options = new RequestOptions({ headers: headers });
     return options;
-  }
+  }*/
 }

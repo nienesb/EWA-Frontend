@@ -24,7 +24,7 @@ export class PropPhaseComponent {
       overlay.defaultViewContainer = vcRef;
     }
 
-    activateBlok(blok: string) {
+    public activateBlok(blok: string) {
     switch (blok) {
       case 'blok1Active':
         this.blok1Active = true;
@@ -50,6 +50,14 @@ export class PropPhaseComponent {
         this.blok3Active = false;
         this.blok4Active = true;
       break;
+    }
+  }
+
+  public generateProp(pointsNeeded, pointsEarned) {
+    if (pointsEarned >= pointsNeeded) {
+      alert('Je propedeuse verzoek is aangevraagd.');
+    } else {
+      alert('Je hebt te weinig punten behaald om een verzoek in te kunnen dienen.');
     }
   }
 }

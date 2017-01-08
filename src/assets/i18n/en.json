@@ -1,13 +1,12 @@
 {
     "open": "Open",
     "closed": "Closed",
-    "tripYes": "Yes",
-    "tripNo": "No",
+    "back": "back",
     "results": "Results",
     "result": "Result",
     "found": "found",
     "foundOutOf": "of",
     "dashboardNav": "Dashboard",
-    "tripsNav": "Trips",
-    "settingsNav": "Settings"
+    "settingsNav": "Settings",
+    "logoutNav": "logout"
 }
