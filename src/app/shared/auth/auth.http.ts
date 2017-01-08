@@ -33,7 +33,7 @@ export class AuthHttp {
       let options = this.setOptions(token.toString());
       return this.http.put(this.appConfig.get('API') + url, data, options);
     });*/
-    return this.http.put(this.appConfig.get('API') + url, data, options);
+    return this.http.put(this.appConfig.get('API') + url, data);
   }
 
   /*private setOptions(token: string): RequestOptions {
