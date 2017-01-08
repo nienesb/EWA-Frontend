@@ -10,6 +10,7 @@ import { TabComponent, TabsComponent } from './tabs/index';
 import { ToolbarComponent } from './toolbar/index';
 import { NavbarComponent } from './navbar/index';
 import { LangSwitcherComponent } from './lang-switcher/index';
+import { MatchesCategoryPipe } from './pipes/matchescategory/matchescategory.pipe';
 
 import { AdalService } from './adal/adal.service';
 import { ApiService } from './api/index';
@@ -21,6 +22,7 @@ import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { ButtonsModule } from 'ng2-bootstrap/components/buttons';
 import { TooltipModule } from 'ng2-bootstrap/components/tooltip';
+
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -40,7 +42,7 @@ import { TooltipModule } from 'ng2-bootstrap/components/tooltip';
   ],
   declarations:
   [
-    ToolbarComponent, NavbarComponent, TabComponent, TabsComponent, LangSwitcherComponent, DatePickerComponent
+    ToolbarComponent, NavbarComponent, TabComponent, TabsComponent, LangSwitcherComponent, DatePickerComponent, MatchesCategoryPipe
   ],
   entryComponents: [],
   exports:
@@ -53,7 +55,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [AdalService, ApiService, AuthGuard, AuthHttp, AuthService]
+      providers: [AdalService, ApiService, AuthGuard, AuthHttp, AuthService, MatchesCategoryPipe]
     };
   }
 }

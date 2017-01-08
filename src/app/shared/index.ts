@@ -7,3 +7,4 @@ export * from './config/app.config';
 export * from './auth/index';
 export * from './api/index';
 export * from './datepicker/index';
+export * from './pipes/index';
