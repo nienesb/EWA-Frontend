@@ -14,4 +14,14 @@
   .table {
     //color: #FFF;
   }
+
+  .period-body {
+    .table {
+      tr {
+        th {
+          text-align: center;
+        }
+      }
+    }
+  }
 }

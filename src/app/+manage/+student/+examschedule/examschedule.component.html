@@ -28,16 +28,16 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th style="text-algin: center;">#</th>
-                                <th style="text-align: center;">Vak</th>
-                                <th style="text-align: center;">Datum</th>
-                                <th style="text-align: center;">Studiepunten</th>
-                                <th style="text-align: center;">Docent</th>
+                                <th>#</th>
+                                <th>Vak</th>
+                                <th>Datum</th>
+                                <th>Studiepunten</th>
+                                <th>Docent</th>
                             </tr>
                         </thead>
                         <tbody *ngIf="schemeBlok1Active">
                             <tr *ngFor="let hasSubject of apiService.block1Subjects; let i = index">
-                                <td>{{i}}</td>
+                                <td>{{i + 1}}</td>
                                 <td>{{hasSubject.subject.name}}</td>
                                 <td>{{hasSubject.examDate ? (hasSubject.examDate | date: 'dd-MM-yyyy') : hasSubject.examDate}}</td>
                                 <td>{{hasSubject.subject.points}}</td>
@@ -46,7 +46,7 @@
                         </tbody>
                          <tbody *ngIf="schemeBlok2Active">
                             <tr *ngFor="let hasSubject of apiService.block2Subjects; let i = index">
-                                <td>{{i}}</td>
+                                <td>{{i + 1}}</td>
                                 <td>{{hasSubject.subject.name}}</td>
                                 <td>{{hasSubject.examDate ? (hasSubject.examDate | date: 'dd-MM-yyyy') : hasSubject.examDate}}</td>
                                 <td>{{hasSubject.subject.points}}</td>
@@ -55,7 +55,7 @@
                         </tbody>
                          <tbody *ngIf="schemeBlok3Active">
                             <tr *ngFor="let hasSubject of apiService.block3Subjects; let i = index">
-                                <td>{{i}}</td>
+                                <td>{{i + 1}}</td>
                                 <td>{{hasSubject.subject.name}}</td>
                                 <td>{{hasSubject.examDate ? (hasSubject.examDate | date: 'dd-MM-yyyy') : hasSubject.examDate}}</td>
                                 <td>{{hasSubject.subject.points}}</td>
@@ -64,7 +64,7 @@
                         </tbody>
                          <tbody *ngIf="schemeBlok4Active">
                             <tr *ngFor="let hasSubject of apiService.block4Subjects; let i = index">
-                                <td>{{i}}</td>
+                                <td>{{i + 1}}</td>
                                 <td>{{hasSubject.subject.name}}</td>
                                 <td>{{hasSubject.examDate ? (hasSubject.examDate | date: 'dd-MM-yyyy') : hasSubject.examDate}}</td>
                                 <td>{{hasSubject.subject.points}}</td>
