@@ -51,7 +51,34 @@
                         </tr>
                     </thead>
                     <tbody *ngIf="blok1Active">
-                        <tr *ngFor="let grade of apiService.resultData">
+                        <tr *ngFor="let grade of apiService.gradeBlock1">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="blok2Active">
+                        <tr *ngFor="let grade of apiService.gradeBlock2">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="blok3Active">
+                        <tr *ngFor="let grade of apiService.gradeBlock3">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="blok4Active">
+                        <tr *ngFor="let grade of apiService.gradeBlock4">
                             <td>{{grade.subjectPartId}}</td>
                             <td>{{grade.subjectPart.name}}</td>
                             <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>

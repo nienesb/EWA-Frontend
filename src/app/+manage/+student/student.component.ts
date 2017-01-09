@@ -30,7 +30,6 @@ export class StudentComponent {
         this.apiService.resultData = resultData;
         console.log(this.apiService.resultData);
 
-       
         this.apiService.totalPointsEarned = null;
 
         for (let gradePoints of this.apiService.resultData) {
@@ -39,6 +38,22 @@ export class StudentComponent {
             this.apiService.totalPointsEarned += gradePoints.subjectPart.points;
           }
         }
+      });
+
+      this.apiService.getResultsByBlock(this.apiService.user.studentNumber, 1).subscribe(data1 => {
+        this.apiService.gradeBlock1 = data1;
+      });
+
+      this.apiService.getResultsByBlock(this.apiService.user.studentNumber, 2).subscribe(data2 => {
+        this.apiService.gradeBlock2 = data2;
+      });
+
+      this.apiService.getResultsByBlock(this.apiService.user.studentNumber, 3).subscribe(data3 => {
+        this.apiService.gradeBlock3 = data3;
+      });
+
+      this.apiService.getResultsByBlock(this.apiService.user.studentNumber, 4).subscribe(data4 => {
+        this.apiService.gradeBlock4 = data4;
       });
     });
   }

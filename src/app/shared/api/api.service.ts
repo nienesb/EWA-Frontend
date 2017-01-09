@@ -19,14 +19,25 @@ export class ApiService {
   public totalPointsNeeded: any;
   public totalPointsEarned: any;
   public user: User = new User();
+  public gradeBlock1: any;
+  public gradeBlock2: any;
+  public gradeBlock3: any;
+  public gradeBlock4: any;
 
   constructor(private adalService: AdalService, private authHttp: AuthHttp) { }
 
-   public getResultsByStudentNumber(studentNumber: number): Observable<any> {
+  public getResultsByStudentNumber(studentNumber: number): Observable<any> {
     return this.authHttp.get(`/results/${studentNumber}`)
       .map((res: Response) => res.json())
       .catch(this.handleError);
   }
+
+  public getResultsByBlock(studentNumber: number, block: number): Observable<any> {
+    return this.authHttp.get(`/results/${studentNumber}/${block}`)
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
 
   public getUserByMail(mailAddress: string): Observable<any> {
     return this.authHttp.get(`/user?email=${mailAddress}`)
