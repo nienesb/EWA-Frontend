@@ -89,6 +89,11 @@
     display: block;
     float: left;
     width: 100%;
+    .period-header {
+      li {
+        cursor: pointer;
+      }
+    }
   }
 
   .table {

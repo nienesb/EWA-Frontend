@@ -2,7 +2,6 @@ import { Route } from '@angular/router';
 import { ManageComponent } from './index';
 import { ExamScheduleComponent } from './+student/+examschedule/index';
 import { PropPhaseComponent } from './+student/+propphase/index';
-import { RemedialComponent } from './+student/+remedial/index';
 import { StudentComponent } from './+student/index';
 import { AuthGuard } from '../shared/index';
 
@@ -30,11 +29,6 @@ export const ManageRoutes: Route[] = [
           {
             path: 'examschedule',
             component: ExamScheduleComponent,
-            canActivate: [AuthGuard]
-          },
-          {
-            path: 'remedial',
-            component: RemedialComponent,
             canActivate: [AuthGuard]
           }
         ]
