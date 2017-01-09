@@ -2,7 +2,7 @@
     <span>Examen planning</span>
 </div>
 <div class="examschedule-container trip-page-base">
-    <div class="col-xl-6">
+    <div class="col-xl-12">
         <div class="card flowCard">
             <div class="card-header">
                 <span>Schema</span>
@@ -28,26 +28,37 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Datum</th>
-                                <th>Status</th>
+                                <th style="text-align: center;">Vak</th>
+                                <th style="text-align: center;">Datum</th>
+                                <th style="text-align: center;">Docent</th>
                             </tr>
                         </thead>
                         <tbody *ngIf="schemeBlok1Active">
-                            <tr *ngFor="let subject of apiService.user.group.subjects">
-                                <td>Blok 2 periode</td>
-                                <td>25/08 - 07/11</td>
-                                <td>Bezig - Week 4</td>
+                            <tr *ngFor="let hasSubject of apiService.block1Subjects">
+                                <td>{{hasSubject.subject.name}}</td>
+                                <td>{{hasSubject.examDate ? (hasSubject.examDate | date: 'dd-MM-yyyy') : hasSubject.examDate}}</td>
+                                <td>{{hasSubject.teacher.firstName}} {{hasSubject.teacher.lastName}}</td> 
                             </tr>
-                            <tr>
-                                <td>Herkansing week</td>
-                                <td>07/11</td>
-                                <td>Over 3 weken</td>
+                        </tbody>
+                         <tbody *ngIf="schemeBlok2Active">
+                            <tr *ngFor="let hasSubject of apiService.block2Subjects">
+                                <td>{{hasSubject.subject.name}}</td>
+                                <td>{{hasSubject.examDate ? (hasSubject.examDate | date: 'dd-MM-yyyy') : hasSubject.examDate}}</td>
+                                <td>{{hasSubject.teacher.firstName}} {{hasSubject.teacher.lastName}}</td> 
                             </tr>
-                            <tr>
-                                <td>Tentamen week</td>
-                                <td>08/11</td>
-                                <td>Over 4 weken</td>
+                        </tbody>
+                         <tbody *ngIf="schemeBlok3Active">
+                            <tr *ngFor="let hasSubject of apiService.block3Subjects">
+                                <td>{{hasSubject.subject.name}}</td>
+                                <td>{{hasSubject.examDate ? (hasSubject.examDate | date: 'dd-MM-yyyy') : hasSubject.examDate}}</td>
+                                <td>{{hasSubject.teacher.firstName}} {{hasSubject.teacher.lastName}}</td> 
+                            </tr>
+                        </tbody>
+                         <tbody *ngIf="schemeBlok4Active">
+                            <tr *ngFor="let hasSubject of apiService.block4Subjects">
+                                <td>{{hasSubject.subject.name}}</td>
+                                <td>{{hasSubject.examDate ? (hasSubject.examDate | date: 'dd-MM-yyyy') : hasSubject.examDate}}</td>
+                                <td>{{hasSubject.teacher.firstName}} {{hasSubject.teacher.lastName}}</td> 
                             </tr>
                         </tbody>
                     </table>

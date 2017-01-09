@@ -21,7 +21,20 @@ export class StudentComponent {
       this.apiService.user = data;
       console.log(this.apiService.user);
       this.apiService.totalPointsNeeded = null;
-
+      for(let hasSubject of this.apiService.user.group.subjects ) {
+          if(hasSubject.block == 1) {
+            this.apiService.block1Subjects.push(hasSubject);
+          }
+          else if(hasSubject.block == 2) {
+            this.apiService.block2Subjects.push(hasSubject);
+          }
+          else if(hasSubject.block == 3) {
+            this.apiService.block3Subjects.push(hasSubject);
+          }
+          else if(hasSubject.block == 4) {
+            this.apiService.block4Subjects.push(hasSubject);
+          }
+      }
       for(let subjectsData of this.apiService.user.group.subjects) {
         this.apiService.totalPointsNeeded += subjectsData.subject.points;
       }

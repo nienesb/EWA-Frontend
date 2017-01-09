@@ -23,6 +23,10 @@ export class ApiService {
   public gradeBlock2: any;
   public gradeBlock3: any;
   public gradeBlock4: any;
+  public block1Subjects = [];
+  public block2Subjects = [];
+  public block3Subjects = [];
+  public block4Subjects = [];
 
   constructor(private adalService: AdalService, private authHttp: AuthHttp) { }
 

@@ -24,9 +24,9 @@ export class ExamScheduleComponent {
   public periodBlok3Active: boolean = false;
   public periodBlok4Active: boolean = false;
 
-  constructor(public apiService: ApiService, public route: ActivatedRoute) { }
+  constructor(public apiService: ApiService, public route: ActivatedRoute) {  }
 
-  activateSchemeBlok(blok: string) {
+  public activateSchemeBlok(blok: string) {
     switch (blok) {
       case 'schemeBlok1Active':
         this.schemeBlok1Active = true;
@@ -55,7 +55,7 @@ export class ExamScheduleComponent {
     }
   }
 
-  activatePeriodBlok(blok: string) {
+  public activatePeriodBlok(blok: string) {
     switch (blok) {
       case 'periodBlok1Active':
         this.periodBlok1Active = true;

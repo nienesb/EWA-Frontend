@@ -18,6 +18,7 @@ export class Group {
 export class GroupHasSubject {
 	id: number;
 	subject: Subject = new Subject;
+	block: number;
 }
 
 export class Subject {
