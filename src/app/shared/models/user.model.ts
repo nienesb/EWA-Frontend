@@ -12,4 +12,18 @@ export class Group {
 	id: number;
 	name: string;
 	year: number;
+	subjects: Array<GroupHasSubject> = new Array<GroupHasSubject>();
+}
+
+export class GroupHasSubject {
+	id: number;
+	subject: Subject = new Subject;
+}
+
+export class Subject {
+	id: number;
+	name: string;
+	points: number;
+	semester: number;
+	block: number;
 }

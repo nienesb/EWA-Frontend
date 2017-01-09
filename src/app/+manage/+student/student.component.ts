@@ -20,16 +20,20 @@ export class StudentComponent {
     this.apiService.getUserByMail(this.adalService.userInfo.userName).subscribe(data => {
       this.apiService.user = data;
       console.log(this.apiService.user);
+      this.apiService.totalPointsNeeded = null;
+
+      for(let subjectsData of this.apiService.user.group.subjects) {
+        this.apiService.totalPointsNeeded += subjectsData.subject.points;
+      }
 
       this.apiService.getResultsByStudentNumber(this.apiService.user.studentNumber).subscribe(resultData => {
         this.apiService.resultData = resultData;
         console.log(this.apiService.resultData);
 
-        this.apiService.totalPointsNeeded = null;
+       
         this.apiService.totalPointsEarned = null;
 
         for (let gradePoints of this.apiService.resultData) {
-          this.apiService.totalPointsNeeded += gradePoints.subjectPart.points;
 
           if (gradePoints.grade >= 5.5) {
             this.apiService.totalPointsEarned += gradePoints.subjectPart.points;
