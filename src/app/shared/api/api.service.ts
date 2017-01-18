@@ -14,7 +14,6 @@ import 'rxjs/add/operator/share';
 
 @Injectable()
 export class ApiService {
-
   public resultData: any;
   public totalPointsNeeded: any;
   public totalPointsEarned: any;
@@ -27,6 +26,7 @@ export class ApiService {
   public block2Subjects = [];
   public block3Subjects = [];
   public block4Subjects = [];
+  private tenant: string = 'ee6564fc-c4f2-47f6-a07f-995228564fb6';
 
   constructor(private adalService: AdalService, private authHttp: AuthHttp) { }
 
@@ -46,6 +46,13 @@ export class ApiService {
   public getUserByMail(mailAddress: string): Observable<any> {
     return this.authHttp.get(`/user?email=${mailAddress}`)
       .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
+  // Heeft azure graph token nodig.
+  public getUserRole(userName: string) {
+    return this.authHttp.getFromAzure(`https://graph.windows.net/${this.tenant}/users/${userName}/memberOf?api-version=1.6`)
+    .map((res: Response) => res.json())
       .catch(this.handleError);
   }
 

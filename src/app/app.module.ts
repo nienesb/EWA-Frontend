@@ -12,6 +12,11 @@ import { ManageModule } from './+manage/manage.module';
 import { ExamScheduleModule } from './+manage/+student/+examschedule/examschedule.module';
 import { PropPhaseModule } from './+manage/+student/+propphase/propphase.module';
 import { StudentModule } from './+manage/+student/student.module';
+import { TeacherModule } from './+manage/+teacher/teacher.module';
+import { GradesModule } from './+manage/+teacher/+grades/grades.module';
+
+import { AdminModule } from './+manage/+admin/admin.module';
+import { SubjectsModule } from './+manage/+admin/+subjects/subjects.module';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -21,7 +26,7 @@ import { routes } from './app.routes';
   imports:
   [
     BrowserModule, HttpModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes),
-    HomeModule, ManageModule, ExamScheduleModule, PropPhaseModule, StudentModule, SharedModule.forRoot()
+    HomeModule, ManageModule, ExamScheduleModule, PropPhaseModule, StudentModule, TeacherModule, GradesModule, AdminModule, SubjectsModule, SharedModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [

@@ -10,5 +10,7 @@
     "dashboardNav": "Dashboard",
     "settingsNav": "Instellingen",
     "logoutNav": "Uitloggen",
-    "Examschedule": "Planning"
+    "Examschedule": "Planning",
+    "Grades": "Cijfers",
+    "Subjects": "Vakken"
 }

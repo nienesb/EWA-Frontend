@@ -179,12 +179,17 @@ a.collapse-menu-link {
 
 a.toolicons {
   padding: 9px 15px;
-  font-size: 38px;
-  line-height: 38px;
+  font-size: 33px;
+  line-height: 33px;
   margin-right: 0;
   cursor: pointer;
   float: left;
   display: block;
+  color: #9a9a9a;
+
+  &:hover {
+    color: #6d6d6d;
+  }
 }
 
 a.toolicons i {

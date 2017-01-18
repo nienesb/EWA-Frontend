@@ -1,0 +1,32 @@
+@import '../../../../styles';
+
+:host {
+  display: block;
+  text-align: center;
+
+  table {
+    thead {
+      tr {
+        th {
+            text-align: center;
+        }
+      }
+    }
+  }
+
+  .flowCard {
+    p {
+      line-height: 20px;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .card-body {
+      position: relative;
+      float: left;
+      background: #FFF;
+      width: 100%;
+      padding: 10px;
+    }
+  }
+}

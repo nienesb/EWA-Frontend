@@ -32,8 +32,8 @@ export class AdalService {
         }
 
         // redirect and logout_redirect are set to current location by default
-        var existingHash = window.location.hash;
-        var pathDefault = window.location.href;
+        let existingHash = window.location.hash;
+        let pathDefault = window.location.href;
         if (existingHash) {
             pathDefault = pathDefault.replace(existingHash, '');
         }
@@ -129,7 +129,7 @@ export class AdalService {
     private updateDataFromCache(resource: string): void {
         let token = this.adalContext.getCachedToken(resource);
         this.oauthData.isAuthenticated = token !== null && token.length > 0;
-        var user = this.adalContext.getCachedUser();
+        let user = this.adalContext.getCachedUser();
         if (user) {
             this.oauthData.userName = user.userName;
             this.oauthData.profile = user.profile;

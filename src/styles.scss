@@ -201,7 +201,9 @@ sd-users {
 
 sd-propphase,
 sd-examschedule,
-sd-remedial {
+sd-remedial,
+sd-grades,
+sd-subjects {
   margin-top: -36px;
 }
 
@@ -258,7 +260,9 @@ nav.sidebar a div {
   cursor: default;
 }
 
-.trip-sub-menu {
+.student-sub-menu,
+.teacher-sub-menu,
+.admin-sub-menu {
   background-color: $flow-darkblue;
   float: left;
   height: 100%;
@@ -267,18 +271,24 @@ nav.sidebar a div {
   width: 5rem;
 }
 
-.trip-sub-menu .forms-icon::before {
+.student-sub-menu .forms-icon::before,
+.teacher-sub-menu .forms-icon::before,
+.admin-sub-menu .forms-icon::before {
   color: $white;
   font-size: 1.75rem;
 }
 
-.trip-sub-menu span.menuTitle {
+.student-sub-menu span.menuTitle,
+.teacher-sub-menu span.menuTitle,
+.admin-sub-menu span.menuTitle {
   font-size: 10px;
   font-weight: 600;
   margin-top: 4px;
 }
 
-div.trip-main {
+div.student-main,
+div.teacher-main,
+div.admin-main {
   display: inline-block;
   padding-left: 5rem;
   width: 100%;

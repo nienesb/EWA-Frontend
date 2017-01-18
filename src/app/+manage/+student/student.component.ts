@@ -4,7 +4,7 @@ import { ApiService } from '../../shared/index';
 import { AdalService } from '../../shared/adal/adal.service';
 
 /**
- * This class represents the lazy loaded DetailsComponent.
+ * This class represents the lazy loaded StudentComponent.
  */
 @Component({
   selector: 'sd-student',

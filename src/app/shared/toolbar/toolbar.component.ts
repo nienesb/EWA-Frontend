@@ -18,7 +18,7 @@ export class ToolbarComponent {
   public settingsMenuActive: boolean = false;
 
   constructor(private adalService: AdalService, private apiService: ApiService) {
-    console.log(this.adalService);
+    console.log(this.adalService.userInfo);
   }
 
   public toggleSettingsMenu() {
