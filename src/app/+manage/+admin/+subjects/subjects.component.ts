@@ -18,6 +18,7 @@ export class SubjectsComponent {
   public group1Active: boolean = true;
   public group2Active: boolean = false;
   public group3Active: boolean = false;
+  public subjects: any = null;
 
   constructor(public apiService: ApiService, public route: ActivatedRoute, public overlay: Overlay, public vcRef: ViewContainerRef, public modal: Modal) {
     overlay.defaultViewContainer = vcRef;
@@ -41,6 +42,21 @@ export class SubjectsComponent {
         this.group3Active = true;
         break;
     }
+  }
+
+  public getSubjects(event: any) {
+    if (event) {
+      this.subjects = this.findById(this.apiService.groups, event);
+      console.log(this.subjects);
+    } else {
+      this.subjects = [];
+    }
+  }
+
+  public findById(source, id) {
+    return source.filter(function( obj ) {
+        return +obj.id === +id;
+    })[ 0 ].subjects;
   }
 }
 

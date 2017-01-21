@@ -7,37 +7,32 @@
     <div class="card flowCard">
       <div class="card-header">
         <span>Vakken per groep</span>
+        <button class="btn btn-success float-right">vak toevoegen</button>
+        <button class="btn btn-success float-right">vakonderdeel toevoegen</button>
       </div>
       <div class="card-body">
         <p>Kies hieronder een groep. Per groep kunt u alle vakken vinden die beschikbaar zijn.
           U kunt deze vakken verwijderen of vakken aan de groep toevoegen.</p>
-        <select>
-          <option value="volvo">ID101</option>
-          <option value="saab">ID102</option>
-          <option value="opel">ID2S1</option>
+        <select class="form-control" (change)="getSubjects($event.target.value)">
+          <option value="">Selecteer een groep</option>
+          <option *ngFor="let group of apiService.groups" value="{{group.id}}">{{group.name}}</option>
         </select>
-        <button type="submit" value="Submit">Open groep</button>
-        <div class="period-header">
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a (click)="activateGroupBlok('group1Active')" [class.active]="group1Active" class="nav-link">ID101</a>
-            </li>
-          </ul>
-        </div>
-        <table class="table">
+
+        <table *ngIf="subjects && subjects.length > 0" class="table">
           <thead>
-          <tr>
-            <th>#</th>
-            <th>Vak</th>
-          </tr>
+            <tr>
+              <th>#</th>
+              <th>Vak</th>
+            </tr>
           </thead>
           <tbody *ngIf="group1Active">
-          <tr *ngFor="let hasSubject of apiService.block1Subjects; let i = index">
-            <td>{{i + 1}}</td>
-            <td>{{hasSubject.subject.name}}</td>
-          </tr>
+            <tr *ngFor="let subject of subjects; let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{subject.subject.name}}</td>
+            </tr>
           </tbody>
         </table>
+        <span *ngIf="subjects && subjects.length < 1">Geen vakken gevonden</span>
       </div>
     </div>
   </div>

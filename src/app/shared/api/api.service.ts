@@ -24,6 +24,7 @@ export class ApiService {
   public totalPointsEarnedYear3: any = 0;
   public totalPointsEarnedYear4: any = 0;
   public user: User = new User();
+  public groups: any;
   public gradeYear1Block1: any;
   public gradeYear1Block2: any;
   public gradeYear1Block3: any;
@@ -70,6 +71,12 @@ export class ApiService {
   public getUserRole(userName: string) {
     return this.authHttp.getFromAzure(`https://graph.windows.net/${this.tenant}/users/${userName}/memberOf?api-version=1.6`)
     .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
+  public getGroups() {
+    return this.authHttp.get(`/groups`)
+      .map((res: Response) => res.json())
       .catch(this.handleError);
   }
 

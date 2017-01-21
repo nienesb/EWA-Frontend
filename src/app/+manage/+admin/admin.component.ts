@@ -17,6 +17,9 @@ export class AdminComponent {
   public errorMessage: string;
 
   constructor(private adalService: AdalService, public apiService: ApiService, public route: ActivatedRoute, public changeDetectorRef: ChangeDetectorRef, public router: Router) {
-
+    this.apiService.getGroups().subscribe(data => {
+      this.apiService.groups = data;
+      console.log(this.apiService.groups);
+    });
   }
 }
