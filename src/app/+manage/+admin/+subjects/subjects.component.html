@@ -1,9 +1,44 @@
 <div class="nav-title">
-    <span>{{'Subjects' | translate}}</span>
+  <span>{{'Subjects' | translate}}</span>
 </div>
 
 <div class="trip-page-base">
-    <div class="col-xl-8">
-        <h1>Vakken pagina</h1>
+  <div class="col-xl-8">
+    <div class="card flowCard">
+      <div class="card-header">
+        <span>Vakken per groep</span>
+      </div>
+      <div class="card-body">
+        <p>Kies hieronder een groep. Per groep kunt u alle vakken vinden die beschikbaar zijn.
+          U kunt deze vakken verwijderen of vakken aan de groep toevoegen.</p>
+        <select>
+          <option value="volvo">ID101</option>
+          <option value="saab">ID102</option>
+          <option value="opel">ID2S1</option>
+        </select>
+        <button type="submit" value="Submit">Open groep</button>
+        <div class="period-header">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a (click)="activateGroupBlok('group1Active')" [class.active]="group1Active" class="nav-link">ID101</a>
+            </li>
+          </ul>
+        </div>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Vak</th>
+          </tr>
+          </thead>
+          <tbody *ngIf="group1Active">
+          <tr *ngFor="let hasSubject of apiService.block1Subjects; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{hasSubject.subject.name}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>

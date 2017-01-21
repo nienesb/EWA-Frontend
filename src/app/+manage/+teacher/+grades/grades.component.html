@@ -1,9 +1,47 @@
 <div class="nav-title">
-    <span>{{'Grades' | translate}}</span>
+  <span>{{'Grades' | translate}}</span>
 </div>
 
 <div class="trip-page-base">
-    <div class="col-xl-8">
-        <h1>Cijfers pagina</h1>
+  <div class="col-xl-8">
+    <div class="card flowCard">
+      <div class="card-header">
+        <span>Studenten per groep</span>
+      </div>
+      <div class="card-body">
+        <p>Kies de groep waarvoor u de cijfers wilt invoeren. U zult nu alle studenten binnen die groep zien.
+          Per student kunt u kiezen bij welk vak u het cijfer wilt invoeren.</p>
+        <div class="period-header">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a (click)="activateGradeBlok('gradeBlok1Active')" [class.active]="gradeBlok1Active" class="nav-link">ID101</a>
+            </li>
+            <li class="nav-item">
+              <a (click)="activateGradeBlok('gradeBlok2Active')" [class.active]="gradeBlok2Active" class="nav-link">ID102</a>
+            </li>
+            <li class="nav-item">
+              <a (click)="activateGradeBlok('gradeBlok3Active')" [class.active]="gradeBlok3Active" class="nav-link">ID2S1</a>
+            </li>
+          </ul>
+        </div>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Naam student</th>
+            <th>Vak</th>
+            <th>Cijfer</th>
+          </tr>
+          </thead>
+          <tbody *ngIf="gradeBlok1Active">
+          <tr *ngFor="let hasSubject of apiService.block1Subjects; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{hasSubject.subject.name}}</td>
+            <td>{{grade.grade}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>
