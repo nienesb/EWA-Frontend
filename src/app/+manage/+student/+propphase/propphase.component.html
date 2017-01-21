@@ -9,10 +9,25 @@
                 <span>Voortgangbalk</span>
             </div>
             <div class="card-body">
-                <progress class="progress progress-striped progress-success" value="{{apiService.totalPointsEarned}}" max="{{apiService.totalPointsNeeded}}"></progress>
-                <div class="studypoints-container">
-                    <p>Studiepunten (eenh.): {{apiService.totalPointsNeeded}} vereist, {{apiService.totalPointsEarned}} behaald, {{apiService.totalPointsNeeded - apiService.totalPointsEarned}} nodig.</p>
-                    <button (click)="generateProp(apiService.totalPointsNeeded, apiService.totalPointsEarned)" class="btn btn-primary" [disabled]="apiService.totalPointsEarned < apiService.totalPointsNeeded">Propedeuse verzoek genereren</button>
+                <progress *ngIf="year1Active" class="progress progress-striped progress-success" value="{{apiService.totalPointsEarnedYear1}}" max="{{apiService.totalPointsNeeded}}"></progress>
+                <div *ngIf="year1Active" class="studypoints-container">
+                    <p>Studiepunten (eenh.): {{apiService.totalPointsNeeded}} vereist, {{apiService.totalPointsEarnedYear1}} behaald, {{apiService.totalPointsNeeded - apiService.totalPointsEarnedYear1}} nodig.</p>
+                    <button (click)="generateProp(apiService.totalPointsNeeded, apiService.totalPointsEarnedYear1)" class="btn btn-primary" [disabled]="apiService.totalPointsEarnedYear1 < apiService.totalPointsNeeded">Propedeuse verzoek genereren</button>
+                </div>
+
+                <progress *ngIf="year2Active" class="progress progress-striped progress-success" value="{{apiService.totalPointsEarnedYear2}}" max="{{apiService.totalPointsNeeded}}"></progress>
+                <div *ngIf="year2Active" class="studypoints-container">
+                    <p>Studiepunten (eenh.): {{apiService.totalPointsNeeded}} vereist, {{apiService.totalPointsEarnedYear2}} behaald, {{apiService.totalPointsNeeded - apiService.totalPointsEarnedYear2}} nodig.</p>
+                </div>
+
+                <progress *ngIf="year3Active" class="progress progress-striped progress-success" value="{{apiService.totalPointsEarnedYear3}}" max="{{apiService.totalPointsNeeded}}"></progress>
+                <div *ngIf="year3Active" class="studypoints-container">
+                    <p>Studiepunten (eenh.): {{apiService.totalPointsNeeded}} vereist, {{apiService.totalPointsEarnedYear3}} behaald, {{apiService.totalPointsNeeded - apiService.totalPointsEarnedYear3}} nodig.</p>
+                </div>
+
+                <progress *ngIf="year4Active" class="progress progress-striped progress-success" value="{{apiService.totalPointsEarnedYear4}}" max="{{apiService.totalPointsNeeded}}"></progress>
+                <div *ngIf="year4Active" class="studypoints-container">
+                    <p>Studiepunten (eenh.): {{apiService.totalPointsNeeded}} vereist, {{apiService.totalPointsEarnedYear4}} behaald, {{apiService.totalPointsNeeded - apiService.totalPointsEarnedYear4}} nodig.</p>
                 </div>
 
                 <div class="legenda-container">
@@ -24,6 +39,20 @@
 
         <div class="period-container top10">
             <div class="period-header">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a (click)="activateYear('year1Active')" [class.active]="year1Active" class="nav-link">Jaar 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="activateYear('year2Active')" [class.active]="year2Active" class="nav-link">Jaar 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="activateYear('year3Active')" [class.active]="year3Active" class="nav-link">Jaar 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="activateYear('year4Active')" [class.active]="year4Active" class="nav-link">Jaar 4</a>
+                    </li>
+                </ul>
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
                         <a (click)="activateBlok('blok1Active')" [class.active]="blok1Active" class="nav-link">Blok 1</a>
@@ -50,8 +79,8 @@
                             <th>AVG</th>
                         </tr>
                     </thead>
-                    <tbody *ngIf="blok1Active">
-                        <tr *ngFor="let grade of apiService.gradeBlock1">
+                    <tbody *ngIf="year1Active && blok1Active">
+                        <tr *ngFor="let grade of apiService.gradeYear1Block1">
                             <td>{{grade.subjectPartId}}</td>
                             <td>{{grade.subjectPart.name}}</td>
                             <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
@@ -59,8 +88,8 @@
                             <td>{{grade.grade}}</td>
                         </tr>
                     </tbody>
-                    <tbody *ngIf="blok2Active">
-                        <tr *ngFor="let grade of apiService.gradeBlock2">
+                    <tbody *ngIf="year1Active && blok2Active">
+                        <tr *ngFor="let grade of apiService.gradeYear1Block2">
                             <td>{{grade.subjectPartId}}</td>
                             <td>{{grade.subjectPart.name}}</td>
                             <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
@@ -68,8 +97,8 @@
                             <td>{{grade.grade}}</td>
                         </tr>
                     </tbody>
-                    <tbody *ngIf="blok3Active">
-                        <tr *ngFor="let grade of apiService.gradeBlock3">
+                    <tbody *ngIf="year1Active && blok3Active">
+                        <tr *ngFor="let grade of apiService.gradeYear1Block3">
                             <td>{{grade.subjectPartId}}</td>
                             <td>{{grade.subjectPart.name}}</td>
                             <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
@@ -77,8 +106,116 @@
                             <td>{{grade.grade}}</td>
                         </tr>
                     </tbody>
-                    <tbody *ngIf="blok4Active">
-                        <tr *ngFor="let grade of apiService.gradeBlock4">
+                    <tbody *ngIf="year1Active && blok4Active">
+                        <tr *ngFor="let grade of apiService.gradeYear1Block4">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year2Active && blok1Active">
+                        <tr *ngFor="let grade of apiService.gradeYear2Block1">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year2Active && blok2Active">
+                        <tr *ngFor="let grade of apiService.gradeYear2Block2">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year2Active && blok3Active">
+                        <tr *ngFor="let grade of apiService.gradeYear2Block3">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year2Active && blok4Active">
+                        <tr *ngFor="let grade of apiService.gradeYear2Block4">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year3Active && blok1Active">
+                        <tr *ngFor="let grade of apiService.gradeYear3Block1">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year3Active && blok2Active">
+                        <tr *ngFor="let grade of apiService.gradeYear3Block2">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year3Active && blok3Active">
+                        <tr *ngFor="let grade of apiService.gradeYear3Block3">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year3Active && blok4Active">
+                        <tr *ngFor="let grade of apiService.gradeYear3Block4">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year4Active && blok1Active">
+                        <tr *ngFor="let grade of apiService.gradeYear4Block1">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year4Active && blok2Active">
+                        <tr *ngFor="let grade of apiService.gradeYear4Block2">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year4Active && blok3Active">
+                        <tr *ngFor="let grade of apiService.gradeYear4Block3">
+                            <td>{{grade.subjectPartId}}</td>
+                            <td>{{grade.subjectPart.name}}</td>
+                            <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>
+                            <td>{{grade.grade >= 5.5 ? 'Behaald' : 'Niet Behaald'}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="year4Active && blok4Active">
+                        <tr *ngFor="let grade of apiService.gradeYear4Block4">
                             <td>{{grade.subjectPartId}}</td>
                             <td>{{grade.subjectPart.name}}</td>
                             <td>{{grade.date ? (grade.date | date: 'dd-MM-yyyy') : grade.date}}</td>

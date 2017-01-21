@@ -14,14 +14,32 @@ import 'rxjs/add/operator/share';
 
 @Injectable()
 export class ApiService {
-  public resultData: any;
-  public totalPointsNeeded: any;
-  public totalPointsEarned: any;
+  public resultDataYear1: any;
+  public resultDataYear2: any;
+  public resultDataYear3: any;
+  public resultDataYear4: any;
+  public totalPointsNeeded: number = 60;
+  public totalPointsEarnedYear1: any = 0;
+  public totalPointsEarnedYear2: any = 0;
+  public totalPointsEarnedYear3: any = 0;
+  public totalPointsEarnedYear4: any = 0;
   public user: User = new User();
-  public gradeBlock1: any;
-  public gradeBlock2: any;
-  public gradeBlock3: any;
-  public gradeBlock4: any;
+  public gradeYear1Block1: any;
+  public gradeYear1Block2: any;
+  public gradeYear1Block3: any;
+  public gradeYear1Block4: any;
+  public gradeYear2Block1: any;
+  public gradeYear2Block2: any;
+  public gradeYear2Block3: any;
+  public gradeYear2Block4: any;
+  public gradeYear3Block1: any;
+  public gradeYear3Block2: any;
+  public gradeYear3Block3: any;
+  public gradeYear3Block4: any;
+  public gradeYear4Block1: any;
+  public gradeYear4Block2: any;
+  public gradeYear4Block3: any;
+  public gradeYear4Block4: any;
   public block1Subjects = [];
   public block2Subjects = [];
   public block3Subjects = [];
@@ -30,18 +48,17 @@ export class ApiService {
 
   constructor(private adalService: AdalService, private authHttp: AuthHttp) { }
 
-  public getResultsByStudentNumber(studentNumber: number): Observable<any> {
-    return this.authHttp.get(`/results/${studentNumber}`)
+  public getYearResultsByStudentNumber(studentNumber: number, year: number): Observable<any> {
+    return this.authHttp.get(`/results/${studentNumber}/${year}`)
       .map((res: Response) => res.json())
       .catch(this.handleError);
   }
 
-  public getResultsByBlock(studentNumber: number, block: number): Observable<any> {
-    return this.authHttp.get(`/results/${studentNumber}/${block}`)
+  public getResultsByYearBlock(studentNumber: number, year: number, block: number): Observable<any> {
+    return this.authHttp.get(`/results/${studentNumber}/${year}/${block}`)
       .map((res: Response) => res.json())
       .catch(this.handleError);
   }
-
 
   public getUserByMail(mailAddress: string): Observable<any> {
     return this.authHttp.get(`/user?email=${mailAddress}`)
