@@ -7,7 +7,7 @@ import { TeacherComponent } from './+teacher/index';
 import { GradesComponent } from './+teacher/+grades/index';
 import { AdminComponent } from './+admin/index';
 import { SubjectsComponent } from './+admin/+subjects/index';
-import { AuthGuard } from '../shared/index';
+import { AuthGuard, StudentAuthGuard, TeacherAuthGuard, AdminAuthGuard } from '../shared/index';
 
 export const ManageRoutes: Route[] = [
 {
@@ -18,7 +18,7 @@ export const ManageRoutes: Route[] = [
       {
         path: 'student',
         component: StudentComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, StudentAuthGuard],
         children: [
           {
             path: '',
@@ -28,19 +28,19 @@ export const ManageRoutes: Route[] = [
           {
             path: 'propphase',
             component: PropPhaseComponent,
-            canActivate: [AuthGuard]
+            canActivate: [AuthGuard, StudentAuthGuard]
           },
           {
             path: 'examschedule',
             component: ExamScheduleComponent,
-            canActivate: [AuthGuard]
+            canActivate: [AuthGuard, StudentAuthGuard]
           }
         ]
       },
       {
         path: 'teacher',
         component: TeacherComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, TeacherAuthGuard],
         children: [
           {
             path: '',
@@ -50,14 +50,14 @@ export const ManageRoutes: Route[] = [
           {
             path: 'grades',
             component: GradesComponent,
-            canActivate: [AuthGuard]
+            canActivate: [AuthGuard, TeacherAuthGuard]
           }
         ]
       },
       {
         path: 'admin',
         component: AdminComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, AdminAuthGuard],
         children: [
           {
             path: '',
@@ -67,7 +67,7 @@ export const ManageRoutes: Route[] = [
           {
             path: 'subjects',
             component: SubjectsComponent,
-            canActivate: [AuthGuard]
+            canActivate: [AuthGuard, AdminAuthGuard]
           }
         ]
       }

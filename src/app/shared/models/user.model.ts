@@ -3,9 +3,14 @@ export class User {
 	email: string;
 	group: Group = new Group;
 	studentNumber: number;
-	isTeacher: boolean = false;
+	userRole: UserRole = new UserRole();
 	firstName: string;
 	lastName: string;
+}
+
+export class UserRole {
+	id: number;
+	name: string;
 }
 
 export class Group {

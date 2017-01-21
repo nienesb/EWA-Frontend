@@ -1,15 +1,15 @@
 <a class="al-logo clearfix"><img src="/assets/svg/icon-sis.svg" /></a>
 <a class="toolicons ion-ios-home-outline" [routerLink]="['/home']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"></a>
-<a class="toolicons" [routerLink]="['/manage/student']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><img src="/assets/svg/hoofdmenu_student.svg" /></a>
-<a class="toolicons ion-university" [routerLink]="['/manage/teacher']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"></a>
-<a class="toolicons ion-person" [routerLink]="['/manage/admin']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"></a>
+<a *ngIf="apiService.user?.userRole && apiService.user?.userRole?.name === 'student'" class="toolicons" [routerLink]="['/manage/student']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><img src="/assets/svg/hoofdmenu_student.svg" /></a>
+<a *ngIf="apiService.user?.userRole && apiService.user?.userRole?.name === 'teacher'" class="toolicons ion-university" [routerLink]="['/manage/teacher']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"></a>
+<a *ngIf="apiService.user?.userRole && apiService.user?.userRole?.name === 'admin'" class="toolicons ion-person" [routerLink]="['/manage/admin']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"></a>
 
 <div class="employeeWindow">
     <a class="toolicons"><img src="/assets/svg/hoofdmenu_bel.svg" /></a>
     <div class="profileWindow">
         <div class="windowLeft">
             <span class="employeeName">{{this.adalService.userInfo.profile.name}}</span>
-            <span class="employeeRole">Student</span>
+            <span class="employeeRole">{{apiService.user?.userRole?.name}}</span>
         </div>
         <img class="profilePic" [(src)]="profileImageSource" alt="{{this.adalService.userInfo.profile.name}}">
     </div>

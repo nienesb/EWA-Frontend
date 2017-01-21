@@ -18,7 +18,6 @@ export class StudentComponent {
 
   constructor(private adalService: AdalService, public apiService: ApiService, public route: ActivatedRoute, public changeDetectorRef: ChangeDetectorRef, public router: Router) {
     this.apiService.getUserByMail(this.adalService.userInfo.userName).subscribe(data => {
-      this.apiService.user = data;
       console.log(this.apiService.user);
       this.apiService.totalPointsNeeded = 60;
       this.apiService.block1Subjects = [];

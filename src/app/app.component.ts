@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from './shared/api/api.service';
 import { AdalService } from './shared/adal/adal.service';
 import { TranslateService } from 'ng2-translate/ng2-translate';
@@ -12,7 +12,7 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
   templateUrl: './app.component.html'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(private adalService: AdalService, private apiService: ApiService, private translate: TranslateService) {
 
     adalService.init({
@@ -29,5 +29,12 @@ export class AppComponent {
     translate.setDefaultLang('nl');
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use('nl');
+  }
+
+  ngOnInit() {
+    this.apiService.getUserByMail(this.adalService.userInfo.userName).subscribe(data => {
+      this.apiService.user = data;
+      console.log(this.apiService.user);
+    });
   }
 }

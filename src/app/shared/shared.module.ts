@@ -14,7 +14,7 @@ import { MatchesCategoryPipe } from './pipes/matchescategory/matchescategory.pip
 
 import { AdalService } from './adal/adal.service';
 import { ApiService } from './api/index';
-import { AuthGuard, AuthHttp, AuthService } from './auth/index';
+import { AuthGuard, AuthHttp, AuthService, StudentAuthGuard, TeacherAuthGuard, AdminAuthGuard } from './auth/index';
 
 import { DatePickerComponent } from './datepicker/index';
 
@@ -55,7 +55,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [AdalService, ApiService, AuthGuard, AuthHttp, AuthService, MatchesCategoryPipe]
+      providers: [AdalService, ApiService, AuthGuard, StudentAuthGuard, TeacherAuthGuard, AdminAuthGuard, AuthHttp, AuthService, MatchesCategoryPipe]
     };
   }
 }
