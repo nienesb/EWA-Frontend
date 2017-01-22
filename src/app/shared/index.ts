@@ -8,3 +8,4 @@ export * from './auth/index';
 export * from './api/index';
 export * from './datepicker/index';
 export * from './pipes/index';
+export * from './modals/index';

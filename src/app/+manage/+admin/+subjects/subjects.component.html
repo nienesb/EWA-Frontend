@@ -7,8 +7,7 @@
     <div class="card flowCard">
       <div class="card-header">
         <span>Vakken per groep</span>
-        <button class="btn btn-success float-right">vak toevoegen</button>
-        <button class="btn btn-success float-right">vakonderdeel toevoegen</button>
+        <button (click)="insertTeam()" class="btn btn-success float-right">vak toevoegen</button>
       </div>
       <div class="card-body">
         <p>Kies hieronder een groep. Per groep kunt u alle vakken vinden die beschikbaar zijn.
@@ -18,7 +17,7 @@
           <option *ngFor="let group of apiService.groups" value="{{group.id}}">{{group.name}}</option>
         </select>
 
-        <table *ngIf="subjects && subjects.length > 0" class="table">
+        <table *ngIf="apiService.subjects && apiService.subjects.length > 0" class="table">
           <thead>
             <tr>
               <th>#</th>
@@ -26,13 +25,13 @@
             </tr>
           </thead>
           <tbody *ngIf="group1Active">
-            <tr *ngFor="let subject of subjects; let i = index">
+            <tr *ngFor="let subject of apiService.subjects; let i = index" (click)="openSubjectPart(subject.subject.id, subject.subject.subjectPart)">
               <td>{{i + 1}}</td>
               <td>{{subject.subject.name}}</td>
             </tr>
           </tbody>
         </table>
-        <span *ngIf="subjects && subjects.length < 1">Geen vakken gevonden</span>
+        <span *ngIf="apiService.subjects && apiService.subjects.length < 1">Geen vakken gevonden</span>
       </div>
     </div>
   </div>

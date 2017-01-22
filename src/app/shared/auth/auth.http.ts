@@ -31,11 +31,10 @@ export class AuthHttp {
   }
 
   post(url: string, data: any): Observable<any> {
-    /*return Observable.fromPromise(this.adalService.acquireToken(this.adalService.config.loginResource)).flatMap(token => {
+    return Observable.fromPromise(this.adalService.acquireToken(this.adalService.config.loginResource)).flatMap(token => {
       let options = this.setOptions(token.toString());
       return this.http.post(this.appConfig.get('API') + url, data, options);
-    });*/
-    return this.http.post(this.appConfig.get('API') + url, data);
+    });
   }
 
   put(url: string, data: any): Observable<any> {

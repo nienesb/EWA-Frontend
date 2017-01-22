@@ -3,7 +3,7 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { AdalService } from '../adal/adal.service';
 import { AuthHttp } from '../auth/auth.http';
-import { User } from '../models/index';
+import { User, SubjectClient, SubjectPartClient } from '../models/index';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/do';
@@ -24,7 +24,9 @@ export class ApiService {
   public totalPointsEarnedYear3: any = 0;
   public totalPointsEarnedYear4: any = 0;
   public user: User = new User();
+  public group: any;
   public groups: any;
+  public subjects: any = null;
   public gradeYear1Block1: any;
   public gradeYear1Block2: any;
   public gradeYear1Block3: any;
@@ -78,6 +80,37 @@ export class ApiService {
     return this.authHttp.get(`/groups`)
       .map((res: Response) => res.json())
       .catch(this.handleError);
+  }
+
+  public insertSubject(subject: SubjectClient): Observable<any> {
+      let body = JSON.stringify(subject);
+      return this.authHttp.post('/admin/subject', body)
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
+  public insertSubjectPart(subjectPart: SubjectPartClient): Observable<any> {
+    let body = JSON.stringify(subjectPart);
+    return this.authHttp.post('/admin/subjectpart', body)
+    .map((res: Response) => res.json())
+    .catch(this.handleError);
+  }
+
+   public getSubjects(event: any) {
+    if (event) {
+      this.group = event;
+      this.subjects = [];
+      this.subjects = this.findById(this.groups, this.group);
+      console.log(this.subjects);
+    } else {
+      this.subjects = [];
+    }
+  }
+
+  private findById(source, id) {
+    return source.filter(function( obj ) {
+        return +obj.id === +id;
+    })[ 0 ].subjects;
   }
 
   private handleError(error: any) {

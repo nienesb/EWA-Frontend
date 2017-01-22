@@ -15,6 +15,10 @@ import { MatchesCategoryPipe } from './pipes/matchescategory/matchescategory.pip
 import { AdalService } from './adal/adal.service';
 import { ApiService } from './api/index';
 import { AuthGuard, AuthHttp, AuthService, StudentAuthGuard, TeacherAuthGuard, AdminAuthGuard } from './auth/index';
+import { SubjectManagementComponent } from './modals/subjectmanagement/subjectmanagement.component';
+import { SubjectPartManagementComponent } from './modals/subjectpartmanagement/subjectpartmanagement.component';
+import { SubjectPartAddComponent } from './modals/subjectpartadd/subjectpartadd.component';
+import { GradeManagementComponent } from './modals/grademanagement/grademanagement.component';
 
 import { DatePickerComponent } from './datepicker/index';
 
@@ -42,14 +46,15 @@ import { TooltipModule } from 'ng2-bootstrap/components/tooltip';
   ],
   declarations:
   [
-    ToolbarComponent, NavbarComponent, TabComponent, TabsComponent, LangSwitcherComponent, DatePickerComponent, MatchesCategoryPipe
+    ToolbarComponent, NavbarComponent, TabComponent, TabsComponent, LangSwitcherComponent, DatePickerComponent, MatchesCategoryPipe,
+    SubjectManagementComponent, SubjectPartManagementComponent, SubjectPartAddComponent, GradeManagementComponent
   ],
-  entryComponents: [],
+  entryComponents: [SubjectManagementComponent, SubjectPartManagementComponent, SubjectPartAddComponent, GradeManagementComponent],
   exports:
   [
-    ToolbarComponent, NavbarComponent, CommonModule, FormsModule, BrowserModule,
-    RouterModule, TranslateModule, TabComponent, TabsComponent, LangSwitcherComponent,
-    ModalModule, BootstrapModalModule, DatePickerComponent, TooltipModule, ButtonsModule]
+    ToolbarComponent, NavbarComponent, CommonModule, FormsModule, BrowserModule, SubjectManagementComponent,
+    RouterModule, TranslateModule, TabComponent, TabsComponent, LangSwitcherComponent, SubjectPartManagementComponent,
+    SubjectPartAddComponent, ModalModule, BootstrapModalModule, DatePickerComponent, TooltipModule, ButtonsModule, GradeManagementComponent]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

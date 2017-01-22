@@ -1,0 +1,21 @@
+<div class="container-fluid custom-modal-container">
+    <div class="row custom-modal-header">
+        <div class="col-xl-12">
+            <h3 class="modal-title">Cijfer toevoegen</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <!--<span *ngIf="context.errorMessage && context.errorMessage === 'TeamAlreadyExists'" class="modal-description">Team bestaat al, kies een ander naam.</span>-->
+            <input [(ngModel)]="context.grade.name" type="text" class="form-control" [disabled]="!context.grade" required placeholder="Naam">
+            <input [(ngModel)]="context.grade.points" type="text" class="form-control" [disabled]="!context.grade" required placeholder="Punten">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xl-12">
+            <button (click)="close()" class="btn btn-success btn-right">Annuleren</button>
+            <button *ngIf="context.grade" (click)="save()" class="btn btn-custom btn-right" [disabled]="!context.grade.name && !context.grade.points">Opslaan</button>
+        </div>
+    </div>
+</div>

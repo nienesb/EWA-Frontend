@@ -1,0 +1,27 @@
+<div class="container-fluid custom-modal-container">
+    <div class="row custom-modal-header">
+        <div class="col-xl-12">
+            <h3 class="modal-title">Vak toevoegen</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="row top10">
+                <span class="input-title">Naam:</span>
+                <input type="text" [(ngModel)]="context.subject.name" class="form-control" placeholder="Naam" />
+            </div>
+
+            <div class="row top10">
+                <span class="input-title">Punten:</span>
+                <input type="text" [(ngModel)]="context.subject.points" class="form-control" placeholder="Punten" />
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xl-12">
+            <button (click)="close()" class="btn btn-success btn-right">Annuleren</button>
+            <button *ngIf="context.subject" (click)="save()" [disabled]="!context.subject.name || !context.subject.points" class="btn btn-custom btn-right">Opslaan</button>
+        </div>
+    </div>
+</div>

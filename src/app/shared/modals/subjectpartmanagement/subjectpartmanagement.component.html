@@ -1,0 +1,35 @@
+<div class="container-fluid custom-modal-container">
+    <div class="row custom-modal-header">
+        <div class="col-xl-12">
+            <h3 class="modal-title">VakOnderdeel beheer</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <table *ngIf="context.subjectPart && context.subjectPart.length > 0" class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>VakOnderdeel</th>
+                        <th>Punten</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let subjectPart of context.subjectPart; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{subjectPart.name}}</td>
+                        <td>{{subjectPart.points}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <span *ngIf="context.subjectPart && context.subjectPart.length < 1">Geen vak onderdelen gevonden</span>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xl-12">
+            <button (click)="close()" class="btn btn-success btn-right">Annuleren</button>
+            <button *ngIf="context.subjectPart" (click)="insertSubjectPart()" class="btn btn-custom btn-right">onderdeel toevoegen</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+$black: #000;
+$white: #fff;
+$grey: #8e8e93;
+$flow-tablegray: #f7f9fb;
+
+:host {
+  .custom-modal-container {
+    background: $white;
+    display: inline-block;
+    position: relative;
+    border-radius: .3rem;
+    margin-bottom: 15px;
+    width: 100%;
+
+    .modal-description {
+      width: 100%;
+      display: block;
+      margin-top: 10px;
+      padding: 5px 20px 10px 0;
+    }
+
+    .error {
+      font-size: 14px;
+      color: red;
+    }
+
+    .delete-btn {
+      font-size: 26px;
+      cursor: pointer;
+      &:hover{
+        color: #8e8e93;
+      }
+    }
+
+    input {
+      width: 300px;
+      margin-top: 10px;
+    }
+
+    textarea {
+      margin-top: 10px;
+    }
+  }
+  .custom-modal-header {
+    background: #eef2f6;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+    margin-top: 0;
+    padding: 15px;
+
+    h3 {
+      color: $black;
+      font-size: 18px;
+      padding: 10px 20px;
+    }
+  }
+  .modal-title {
+    float: left;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .btn-right {
+    float: right;
+  }
+}
