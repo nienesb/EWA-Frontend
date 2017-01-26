@@ -1,8 +1,9 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, ViewContainerRef, OnInit } from '@angular/core';
 import { ApiService } from '../../../shared/index';
 import { ActivatedRoute } from '@angular/router';
 import { Overlay } from 'angular2-modal';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
+import { Result } from '../../../shared/index';
 
 /**
  * This class represents the lazy loaded GradesComponent.
@@ -12,15 +13,43 @@ import { Modal } from 'angular2-modal/plugins/bootstrap';
   templateUrl: './grades.component.html',
   styleUrls: ['./grades.component.scss']
 })
-export class GradesComponent {
+export class GradesComponent implements OnInit {
   public loading: boolean = false;
   public errorMessage: string;
   public gradeBlok1Active: boolean = true;
   public gradeBlok2Active: boolean = false;
   public gradeBlok3Active: boolean = false;
+  public result: Result = new Result();
+  public users: any;
+  public subjectparts: any;
 
   constructor(public apiService: ApiService, public route: ActivatedRoute, public overlay: Overlay, public vcRef: ViewContainerRef, public modal: Modal) {
     overlay.defaultViewContainer = vcRef;
+  }
+
+  ngOnInit() {
+    this.getAllUsers();
+    this.getAllSubjectparts();
+  }
+
+  public getAllUsers() {
+    this.apiService.getAllStudents().subscribe(data => {
+      this.users = data;
+      console.log(this.users);
+    }, error => console.log(error));
+  }
+
+  public getAllSubjectparts() {
+    this.apiService.getAllSubjectparts().subscribe(data => {
+      this.subjectparts = data;
+      console.log(this.subjectparts);
+    }, error => console.log(error));
+  }
+
+  public insertGrade() {
+    this.apiService.insertGrade(this.result).subscribe(data => {
+      console.log('Cijfer toegevoegd.');
+    }, error => console.log(error));
   }
 
   public activateGradeBlok(blok: string) {

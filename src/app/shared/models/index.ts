@@ -6,3 +6,4 @@ export * from './user.model';
 export * from './grade.model';
 export * from './subjectpartclient.model';
 export * from './subjectclient.model';
+export * from './result.model';

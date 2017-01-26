@@ -39,10 +39,4 @@ export class SubjectManagementComponent implements ModalComponent<SubjectManagem
       this.router.navigate(['/subjects']);
     }, error => console.log(error));
   }
-
-  /*private getUsers() {
-    this.userManagementService.getAllTeams().subscribe(data => {
-      this.userManagementService.teams = data.result;
-    });
-  }*/
 }

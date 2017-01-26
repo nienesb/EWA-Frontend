@@ -3,7 +3,7 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { AdalService } from '../adal/adal.service';
 import { AuthHttp } from '../auth/auth.http';
-import { User, SubjectClient, SubjectPartClient } from '../models/index';
+import { User, SubjectClient, SubjectPartClient, Result } from '../models/index';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/do';
@@ -57,6 +57,18 @@ export class ApiService {
       .catch(this.handleError);
   }
 
+   public getAllStudents(): Observable<any> {
+    return this.authHttp.get(`/users`)
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
+  public getAllSubjectparts(): Observable<any> {
+    return this.authHttp.get(`/subjectparts`)
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
   public getResultsByYearBlock(studentNumber: number, year: number, block: number): Observable<any> {
     return this.authHttp.get(`/results/${studentNumber}/${year}/${block}`)
       .map((res: Response) => res.json())
@@ -87,6 +99,13 @@ export class ApiService {
       return this.authHttp.post('/admin/subject', body)
       .map((res: Response) => res.json())
       .catch(this.handleError);
+  }
+
+  public insertGrade(result: Result): Observable<any> {
+    let body = JSON.stringify(result);
+    return this.authHttp.post('/teacher/grade', body)
+    .map((res: Response) => res.json())
+    .catch(this.handleError);
   }
 
   public insertSubjectPart(subjectPart: SubjectPartClient): Observable<any> {

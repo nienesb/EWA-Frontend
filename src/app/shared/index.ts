@@ -9,3 +9,4 @@ export * from './api/index';
 export * from './datepicker/index';
 export * from './pipes/index';
 export * from './modals/index';
+export * from './models/index';
