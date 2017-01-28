@@ -4,17 +4,18 @@
 
 <div class="trip-page-base">
   <div class="col-xl-8">
+      <span *ngIf="resultAdded">{{resultAdded}}</span>
       <select class="form-control top10" [(ngModel)]="result.userId">
         <option value="">Kies student</option>
         <option *ngFor="let user of users" value="{{user.id}}">{{user.firstName + ' ' + user.lastName}}</option>
       </select>
-      <select class="form-control top10" [(ngModel)]="result.subjectPartId">
+      <select class="form-control top10" [(ngModel)]="result.subjectPart.id">
         <option value="">Kies vak</option>
         <option *ngFor="let subjectpart of subjectparts" value="{{subjectpart.id}}">{{subjectpart.name}}</option>
       </select>
       <input class="form-control top10" [(ngModel)]="result.grade" type="number" placeholder="Cijfer">
       <input class="form-control top10" [(ngModel)]="result.year" type="number" placeholder="Jaar">
       <input class="form-control top10" [(ngModel)]="result.block" type="number" placeholder="Blok">
-      <button (click)="insertGrade()" [disabled]="!result.userId || !result.subjectPartId || !result.grade || !result.year || !result.block" class="btn btn-success">Cijfer toevoegen</button>
+      <button (click)="insertGrade()" [disabled]="!result.userId || !result.subjectPart.id || !result.grade || !result.year || !result.block" class="btn btn-success">Cijfer toevoegen</button>
   </div>
 </div>

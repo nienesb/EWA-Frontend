@@ -22,6 +22,7 @@ export class GradesComponent implements OnInit {
   public result: Result = new Result();
   public users: any;
   public subjectparts: any;
+  public resultAdded: string;
 
   constructor(public apiService: ApiService, public route: ActivatedRoute, public overlay: Overlay, public vcRef: ViewContainerRef, public modal: Modal) {
     overlay.defaultViewContainer = vcRef;
@@ -47,9 +48,14 @@ export class GradesComponent implements OnInit {
   }
 
   public insertGrade() {
+    this.resultAdded = null;
     this.apiService.insertGrade(this.result).subscribe(data => {
-      console.log('Cijfer toegevoegd.');
-    }, error => console.log(error));
+      this.resultAdded = 'Cijfer toegevoegd!';
+      this.result = new Result();
+    }, error => {
+      console.log(error);
+      this.resultAdded = null;
+    });
   }
 
   public activateGradeBlok(blok: string) {

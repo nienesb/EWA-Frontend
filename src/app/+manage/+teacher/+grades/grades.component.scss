@@ -4,6 +4,12 @@
   display: block;
   text-align: center;
 
+  .btn-success {
+    background-color: #5cb85c;
+    margin-top: 10px;
+    float: right;
+  }
+
   table {
     thead {
       tr {
