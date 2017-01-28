@@ -17,6 +17,7 @@ import { GradesModule } from './+manage/+teacher/+grades/grades.module';
 
 import { AdminModule } from './+manage/+admin/admin.module';
 import { SubjectsModule } from './+manage/+admin/+subjects/subjects.module';
+import { GroupsModule } from './+manage/+admin/+groups/groups.module';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -25,7 +26,7 @@ import { routes } from './app.routes';
 @NgModule({
   imports:
   [
-    BrowserModule, HttpModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes),
+    BrowserModule, HttpModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), GroupsModule,
     HomeModule, ManageModule, ExamScheduleModule, PropPhaseModule, StudentModule, TeacherModule, GradesModule, AdminModule, SubjectsModule, SharedModule.forRoot()
   ],
   declarations: [AppComponent],

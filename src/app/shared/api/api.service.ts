@@ -3,7 +3,7 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { AdalService } from '../adal/adal.service';
 import { AuthHttp } from '../auth/auth.http';
-import { User, SubjectClient, SubjectPartClient, Result } from '../models/index';
+import { User, SubjectClient, SubjectPartClient, Result, GroupHasSubjectClient } from '../models/index';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/do';
@@ -63,6 +63,12 @@ export class ApiService {
       .catch(this.handleError);
   }
 
+  public getAllSubjects(): Observable<any> {
+    return this.authHttp.get(`/subjects`)
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
   public getAllSubjectparts(): Observable<any> {
     return this.authHttp.get(`/subjectparts`)
       .map((res: Response) => res.json())
@@ -88,7 +94,13 @@ export class ApiService {
       .catch(this.handleError);
   }
 
-  public getGroups() {
+  public getAllTeachers(): Observable<any> {
+    return this.authHttp.get(`/users/teacher`)
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
+  public getGroups(): Observable<any> {
     return this.authHttp.get(`/groups`)
       .map((res: Response) => res.json())
       .catch(this.handleError);
@@ -111,6 +123,13 @@ export class ApiService {
   public insertSubjectPart(subjectPart: SubjectPartClient): Observable<any> {
     let body = JSON.stringify(subjectPart);
     return this.authHttp.post('/admin/subjectpart', body)
+    .map((res: Response) => res.json())
+    .catch(this.handleError);
+  }
+
+  public insertGroupHasSubject(groupHasSubject: GroupHasSubjectClient): Observable<any> {
+    let body = JSON.stringify(groupHasSubject);
+    return this.authHttp.post('/admin/assignsubject', body)
     .map((res: Response) => res.json())
     .catch(this.handleError);
   }

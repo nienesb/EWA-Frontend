@@ -7,6 +7,7 @@ import { TeacherComponent } from './+teacher/index';
 import { GradesComponent } from './+teacher/+grades/index';
 import { AdminComponent } from './+admin/index';
 import { SubjectsComponent } from './+admin/+subjects/index';
+import { GroupsComponent } from './+admin/+groups/index';
 import { AuthGuard, StudentAuthGuard, TeacherAuthGuard, AdminAuthGuard } from '../shared/index';
 
 export const ManageRoutes: Route[] = [
@@ -67,6 +68,11 @@ export const ManageRoutes: Route[] = [
           {
             path: 'subjects',
             component: SubjectsComponent,
+            canActivate: [AuthGuard, AdminAuthGuard]
+          },
+          {
+            path: 'groups',
+            component: GroupsComponent,
             canActivate: [AuthGuard, AdminAuthGuard]
           }
         ]

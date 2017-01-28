@@ -1,0 +1,25 @@
+<div class="nav-title">
+  <span>{{'Groups' | translate}}</span>
+</div>
+
+<div class="trip-page-base">
+  <div class="col-xl-8">
+      <span *ngIf="GroupAdded">{{GroupAdded}}</span>
+      <select class="form-control top10" [(ngModel)]="groupHasSubject.group.id">
+        <option value="">Kies Groep</option>
+        <option *ngFor="let group of groups" value="{{group.id}}">{{group.name}}</option>
+      </select>
+      <select class="form-control top10" [(ngModel)]="groupHasSubject.subject.id">
+        <option value="">Kies vak</option>
+        <option *ngFor="let subject of subjects" value="{{subject.id}}">{{subject.name}}</option>
+      </select>
+      <select class="form-control top10" [(ngModel)]="groupHasSubject.teacher.id">
+        <option value="">Kies leraar/lerares</option>
+        <option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{teacher.firstName + ' ' + teacher.lastName}}</option>
+      </select>
+      <input class="form-control top10" [(ngModel)]="groupHasSubject.semester" type="number" placeholder="Semester">
+      <input class="form-control top10" [(ngModel)]="groupHasSubject.block" type="number" placeholder="Blok">
+      <input class="form-control top10" [(ngModel)]="groupHasSubject.examDate" type="datetime" placeholder="Examendatum">
+      <button (click)="insertGroup()" [disabled]="!groupHasSubject.group.id || !groupHasSubject.subject.id|| !groupHasSubject.teacher.id || !groupHasSubject.semester || !groupHasSubject.block || !groupHasSubject.examDate" class="btn btn-success">Groep koppelen</button>
+  </div>
+</div>
